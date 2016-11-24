@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C01DE696D000D6C0E3 /* AppDelegate.swift */; };
+		84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C21DE696D000D6C0E3 /* FirstViewController.swift */; };
+		84F369C51DE696D000D6C0E3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C41DE696D000D6C0E3 /* SecondViewController.swift */; };
+		84F369C81DE696D000D6C0E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F369C61DE696D000D6C0E3 /* Main.storyboard */; };
+		84F369CA1DE696D000D6C0E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F369C91DE696D000D6C0E3 /* Assets.xcassets */; };
+		84F369CD1DE696D000D6C0E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F369CB1DE696D000D6C0E3 /* LaunchScreen.storyboard */; };
+		84F369D81DE696D000D6C0E3 /* Congress_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369D71DE696D000D6C0E3 /* Congress_SearchTests.swift */; };
+		84F369E31DE696D000D6C0E3 /* Congress_SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369E21DE696D000D6C0E3 /* Congress_SearchUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84F369D41DE696D000D6C0E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F369B51DE696D000D6C0E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F369BC1DE696D000D6C0E3;
+			remoteInfo = "Congress Search";
+		};
+		84F369DF1DE696D000D6C0E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F369B51DE696D000D6C0E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F369BC1DE696D000D6C0E3;
+			remoteInfo = "Congress Search";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84F369BD1DE696D000D6C0E3 /* Congress Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Congress Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F369C01DE696D000D6C0E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84F369C21DE696D000D6C0E3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		84F369C41DE696D000D6C0E3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		84F369C71DE696D000D6C0E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84F369C91DE696D000D6C0E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84F369CC1DE696D000D6C0E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84F369CE1DE696D000D6C0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F369D31DE696D000D6C0E3 /* Congress SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Congress SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F369D71DE696D000D6C0E3 /* Congress_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congress_SearchTests.swift; sourceTree = "<group>"; };
+		84F369D91DE696D000D6C0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F369DE1DE696D000D6C0E3 /* Congress SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Congress SearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F369E21DE696D000D6C0E3 /* Congress_SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congress_SearchUITests.swift; sourceTree = "<group>"; };
+		84F369E41DE696D000D6C0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84F369BA1DE696D000D6C0E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F369D01DE696D000D6C0E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F369DB1DE696D000D6C0E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84F369B41DE696D000D6C0E3 = {
+			isa = PBXGroup;
+			children = (
+				84F369BF1DE696D000D6C0E3 /* Congress Search */,
+				84F369D61DE696D000D6C0E3 /* Congress SearchTests */,
+				84F369E11DE696D000D6C0E3 /* Congress SearchUITests */,
+				84F369BE1DE696D000D6C0E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84F369BE1DE696D000D6C0E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84F369BD1DE696D000D6C0E3 /* Congress Search.app */,
+				84F369D31DE696D000D6C0E3 /* Congress SearchTests.xctest */,
+				84F369DE1DE696D000D6C0E3 /* Congress SearchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84F369BF1DE696D000D6C0E3 /* Congress Search */ = {
+			isa = PBXGroup;
+			children = (
+				84F369C01DE696D000D6C0E3 /* AppDelegate.swift */,
+				84F369C21DE696D000D6C0E3 /* FirstViewController.swift */,
+				84F369C41DE696D000D6C0E3 /* SecondViewController.swift */,
+				84F369C61DE696D000D6C0E3 /* Main.storyboard */,
+				84F369C91DE696D000D6C0E3 /* Assets.xcassets */,
+				84F369CB1DE696D000D6C0E3 /* LaunchScreen.storyboard */,
+				84F369CE1DE696D000D6C0E3 /* Info.plist */,
+			);
+			path = "Congress Search";
+			sourceTree = "<group>";
+		};
+		84F369D61DE696D000D6C0E3 /* Congress SearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				84F369D71DE696D000D6C0E3 /* Congress_SearchTests.swift */,
+				84F369D91DE696D000D6C0E3 /* Info.plist */,
+			);
+			path = "Congress SearchTests";
+			sourceTree = "<group>";
+		};
+		84F369E11DE696D000D6C0E3 /* Congress SearchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84F369E21DE696D000D6C0E3 /* Congress_SearchUITests.swift */,
+				84F369E41DE696D000D6C0E3 /* Info.plist */,
+			);
+			path = "Congress SearchUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84F369BC1DE696D000D6C0E3 /* Congress Search */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F369E71DE696D000D6C0E3 /* Build configuration list for PBXNativeTarget "Congress Search" */;
+			buildPhases = (
+				84F369B91DE696D000D6C0E3 /* Sources */,
+				84F369BA1DE696D000D6C0E3 /* Frameworks */,
+				84F369BB1DE696D000D6C0E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Congress Search";
+			productName = "Congress Search";
+			productReference = 84F369BD1DE696D000D6C0E3 /* Congress Search.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84F369D21DE696D000D6C0E3 /* Congress SearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F369EA1DE696D000D6C0E3 /* Build configuration list for PBXNativeTarget "Congress SearchTests" */;
+			buildPhases = (
+				84F369CF1DE696D000D6C0E3 /* Sources */,
+				84F369D01DE696D000D6C0E3 /* Frameworks */,
+				84F369D11DE696D000D6C0E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84F369D51DE696D000D6C0E3 /* PBXTargetDependency */,
+			);
+			name = "Congress SearchTests";
+			productName = "Congress SearchTests";
+			productReference = 84F369D31DE696D000D6C0E3 /* Congress SearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84F369DD1DE696D000D6C0E3 /* Congress SearchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F369ED1DE696D000D6C0E3 /* Build configuration list for PBXNativeTarget "Congress SearchUITests" */;
+			buildPhases = (
+				84F369DA1DE696D000D6C0E3 /* Sources */,
+				84F369DB1DE696D000D6C0E3 /* Frameworks */,
+				84F369DC1DE696D000D6C0E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84F369E01DE696D000D6C0E3 /* PBXTargetDependency */,
+			);
+			name = "Congress SearchUITests";
+			productName = "Congress SearchUITests";
+			productReference = 84F369DE1DE696D000D6C0E3 /* Congress SearchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84F369B51DE696D000D6C0E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Anush Kadoyan";
+				TargetAttributes = {
+					84F369BC1DE696D000D6C0E3 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					84F369D21DE696D000D6C0E3 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84F369BC1DE696D000D6C0E3;
+					};
+					84F369DD1DE696D000D6C0E3 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84F369BC1DE696D000D6C0E3;
+					};
+				};
+			};
+			buildConfigurationList = 84F369B81DE696D000D6C0E3 /* Build configuration list for PBXProject "Congress Search" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84F369B41DE696D000D6C0E3;
+			productRefGroup = 84F369BE1DE696D000D6C0E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84F369BC1DE696D000D6C0E3 /* Congress Search */,
+				84F369D21DE696D000D6C0E3 /* Congress SearchTests */,
+				84F369DD1DE696D000D6C0E3 /* Congress SearchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84F369BB1DE696D000D6C0E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F369CD1DE696D000D6C0E3 /* LaunchScreen.storyboard in Resources */,
+				84F369CA1DE696D000D6C0E3 /* Assets.xcassets in Resources */,
+				84F369C81DE696D000D6C0E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F369D11DE696D000D6C0E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F369DC1DE696D000D6C0E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84F369B91DE696D000D6C0E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F369C51DE696D000D6C0E3 /* SecondViewController.swift in Sources */,
+				84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */,
+				84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F369CF1DE696D000D6C0E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F369D81DE696D000D6C0E3 /* Congress_SearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F369DA1DE696D000D6C0E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F369E31DE696D000D6C0E3 /* Congress_SearchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84F369D51DE696D000D6C0E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84F369BC1DE696D000D6C0E3 /* Congress Search */;
+			targetProxy = 84F369D41DE696D000D6C0E3 /* PBXContainerItemProxy */;
+		};
+		84F369E01DE696D000D6C0E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84F369BC1DE696D000D6C0E3 /* Congress Search */;
+			targetProxy = 84F369DF1DE696D000D6C0E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84F369C61DE696D000D6C0E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84F369C71DE696D000D6C0E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84F369CB1DE696D000D6C0E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84F369CC1DE696D000D6C0E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84F369E51DE696D000D6C0E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84F369E61DE696D000D6C0E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84F369E81DE696D000D6C0E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Congress Search/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.Congress-Search";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		84F369E91DE696D000D6C0E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Congress Search/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.Congress-Search";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		84F369EB1DE696D000D6C0E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Congress SearchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.Congress-SearchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Congress Search.app/Congress Search";
+			};
+			name = Debug;
+		};
+		84F369EC1DE696D000D6C0E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Congress SearchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.Congress-SearchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Congress Search.app/Congress Search";
+			};
+			name = Release;
+		};
+		84F369EE1DE696D000D6C0E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Congress SearchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.Congress-SearchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Congress Search";
+			};
+			name = Debug;
+		};
+		84F369EF1DE696D000D6C0E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Congress SearchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.Congress-SearchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Congress Search";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84F369B81DE696D000D6C0E3 /* Build configuration list for PBXProject "Congress Search" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F369E51DE696D000D6C0E3 /* Debug */,
+				84F369E61DE696D000D6C0E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F369E71DE696D000D6C0E3 /* Build configuration list for PBXNativeTarget "Congress Search" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F369E81DE696D000D6C0E3 /* Debug */,
+				84F369E91DE696D000D6C0E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84F369EA1DE696D000D6C0E3 /* Build configuration list for PBXNativeTarget "Congress SearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F369EB1DE696D000D6C0E3 /* Debug */,
+				84F369EC1DE696D000D6C0E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84F369ED1DE696D000D6C0E3 /* Build configuration list for PBXNativeTarget "Congress SearchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F369EE1DE696D000D6C0E3 /* Debug */,
+				84F369EF1DE696D000D6C0E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84F369B51DE696D000D6C0E3 /* Project object */;
+}
