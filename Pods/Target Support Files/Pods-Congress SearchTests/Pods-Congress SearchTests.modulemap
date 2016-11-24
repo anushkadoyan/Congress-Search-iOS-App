@@ -1,0 +1,6 @@
+framework module Pods_Congress_SearchTests {
+  umbrella header "Pods-Congress SearchTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

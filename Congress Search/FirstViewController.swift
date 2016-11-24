@@ -7,11 +7,24 @@
 //
 
 import UIKit
-
+import Alamofire
 class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        var property:String = "sdfsd"
+        
+            
+            
+            Alamofire.request("https://2-dot-congress-148223.appspot.com/main.php?action=content").responseJSON { response in
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+            }
+            
+            
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
