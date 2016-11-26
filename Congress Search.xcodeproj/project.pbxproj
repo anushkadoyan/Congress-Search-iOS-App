@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		329E249DFFA38EC9497214A8 /* Pods_Congress_SearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149761112C9B032D1B63108B /* Pods_Congress_SearchTests.framework */; };
 		79D5D5D1E16F9A299ABEAB30 /* Pods_Congress_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06716A5944CA378C7F2720D1 /* Pods_Congress_Search.framework */; };
+		84C2211A1DE8E9DC000090C6 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C221191DE8E9DC000090C6 /* model.swift */; };
 		84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C01DE696D000D6C0E3 /* AppDelegate.swift */; };
 		84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C21DE696D000D6C0E3 /* FirstViewController.swift */; };
 		84F369C51DE696D000D6C0E3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C41DE696D000D6C0E3 /* SecondViewController.swift */; };
@@ -44,6 +45,7 @@
 		149761112C9B032D1B63108B /* Pods_Congress_SearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Congress_SearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4056EF85D30F9966A579896D /* Pods-Congress SearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Congress SearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Congress SearchTests/Pods-Congress SearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69DAAF624A3C8818BDDEA8C0 /* Pods-Congress Search.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Congress Search.release.xcconfig"; path = "Pods/Target Support Files/Pods-Congress Search/Pods-Congress Search.release.xcconfig"; sourceTree = "<group>"; };
+		84C221191DE8E9DC000090C6 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		84F369BD1DE696D000D6C0E3 /* Congress Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Congress Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F369C01DE696D000D6C0E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F369C21DE696D000D6C0E3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				84F369C91DE696D000D6C0E3 /* Assets.xcassets */,
 				84F369CB1DE696D000D6C0E3 /* LaunchScreen.storyboard */,
 				84F369CE1DE696D000D6C0E3 /* Info.plist */,
+				84C221191DE8E9DC000090C6 /* model.swift */,
 			);
 			path = "Congress Search";
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				84F369C51DE696D000D6C0E3 /* SecondViewController.swift in Sources */,
 				84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */,
 				84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */,
+				84C2211A1DE8E9DC000090C6 /* model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +528,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -573,6 +578,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -601,8 +607,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1188C2B998DE989CB09521BF /* Pods-Congress Search.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Congress Search/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.Congress-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -614,8 +622,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69DAAF624A3C8818BDDEA8C0 /* Pods-Congress Search.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Congress Search/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.Congress-Search";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -700,6 +710,7 @@
 				84F369E91DE696D000D6C0E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84F369EA1DE696D000D6C0E3 /* Build configuration list for PBXNativeTarget "Congress SearchTests" */ = {
 			isa = XCConfigurationList;
@@ -708,6 +719,7 @@
 				84F369EC1DE696D000D6C0E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84F369ED1DE696D000D6C0E3 /* Build configuration list for PBXNativeTarget "Congress SearchUITests" */ = {
 			isa = XCConfigurationList;
@@ -716,6 +728,7 @@
 				84F369EF1DE696D000D6C0E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
