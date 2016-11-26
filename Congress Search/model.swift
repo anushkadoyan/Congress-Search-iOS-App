@@ -11,44 +11,39 @@ import Alamofire
 import SwiftyJSON
 
 class model {
-    func getOrders(completionHandler: @escaping (NSDictionary?, NSError?) -> ()) {
-        makeCall(completionHandler: completionHandler)
-    }
-    
-    func makeCall(completionHandler: @escaping (NSDictionary?, NSError?) -> ()) {
-        let url = "https://2-dot-congress-148223.appspot.com/main.php?action=content"
-        Alamofire.request( url)
-            .responseJSON { response in
-                switch response.result {
-                    case .success(let value):
-                        completionHandler(value as? NSDictionary, nil)
-                    case .failure(let error):
-                        completionHandler(nil, error as NSError?)
-                }
-        }
-    }
-//    func getData() {
-//        let url = "https://2-dot-congress-148223.appspot.com/main.php?action=content"
-//        Alamofire.request(url).validate().responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)[0]["results"]
-//                print("JSON: \(json)")
-//                var lol = json
-//                if let items = json.array {
-//                    for item in items {
-//                        if let title = item["first_name"].string {
-//                            print(title)
-//                            //                            self.numLegs = self.numLegs+1
-//                        }
-//                    }
-//                }
-////                return lol
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
-//
+//    static let fvc = FirstViewController()
+    var jsonObject: [JSON] = []
+    var a = [JSON]()
+    //0 for legislators
+    func getJSON(index: Int){
+        print("success")
 
-}   
+        let url = "https://2-dot-congress-148223.appspot.com/main.php?action=content"
+        Alamofire.request(url).responseJSON { (Response) -> Void in
+            switch Response.result {
+            // checking if result has value
+            case .success(let value):
+                let json = JSON(value)[index]["results"]
+                
+//                fvc.a = json.array! as [AnyObject]
+                //                    let sortedResults = json.sort { $0["distance"].doubleValue < $1["distance"].doubleValue }
+                self.a = json.array!
+//                for anItem in json.array! {
+//        
+//                    let title: String? = anItem["last_name"].stringValue + ", " + anItem["first_name"].stringValue
+//                    let body: String? = anItem["last_name"].stringValue
+//                    model.fvc.tableTitle.append(title!)
+//                    model.fvc.tableBody.append(body!)
+//
+//                }
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .reload, object: nil)
+                }
+            case .failure(let error):
+                print(error)
+                
+                
+            }
+        }
+}
+}
