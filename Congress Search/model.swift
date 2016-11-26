@@ -25,7 +25,9 @@ class model {
             case .success(let value):
                 let json = JSON(value)[index]["results"]
                 
-//                fvc.a = json.array! as [AnyObject]
+            
+               
+                //                fvc.a = json.array! as [AnyObject]
                 //                    let sortedResults = json.sort { $0["distance"].doubleValue < $1["distance"].doubleValue }
                 self.a = json.array!
 //                for anItem in json.array! {

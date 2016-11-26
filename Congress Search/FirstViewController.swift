@@ -13,7 +13,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var legTable: UITableView!
     let mod = model()
-
+     var states = [     "AL": "Alabama",     "AK": "Alaska",     "AS": "American Samoa",     "AZ": "Arizona",     "AR": "Arkansas",     "CA": "California",     "CO": "Colorado",     "CT": "Connecticut",     "DE": "Delaware",     "DC": "District Of Columbia",    "FL": "Florida",     "GA": "Georgia",     "GU": "Guam",     "HI": "Hawaii",     "ID": "Idaho",     "IL": "Illinois",     "IN": "Indiana",     "IA": "Iowa",     "KS": "Kansas",     "KY": "Kentucky",     "LA": "Louisiana",     "ME": "Maine",     "MH": "Marshall Islands",     "MD": "Maryland",     "MA": "Massachusetts",     "MI": "Michigan",     "MN": "Minnesota",     "MS": "Mississippi",     "MO": "Missouri",     "MT": "Montana",     "NE": "Nebraska",     "NV": "Nevada",     "NH": "New Hampshire",     "NJ": "New Jersey",     "NM": "New Mexico",     "NY": "New York",     "NC": "North Carolina",     "ND": "North Dakota",     "MP": "Northern Mariana Islands",     "OH": "Ohio",     "OK": "Oklahoma",     "OR": "Oregon",     "PW": "Palau",     "PA": "Pennsylvania",     "PR": "Puerto Rico",     "RI": "Rhode Island",     "SC": "South Carolina",     "SD": "South Dakota",     "TN": "Tennessee",     "TX": "Texas",     "UT": "Utah",     "VT": "Vermont",     "VI": "Virgin Islands",     "VA": "Virginia",     "WA": "Washington",     "WV": "West Virginia",     "WI": "Wisconsin",     "WY": "Wyoming" ];
     override func viewDidLoad() {
         super.viewDidLoad()
         legTable.delegate = self
@@ -40,7 +40,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "legCell", for: indexPath)
         if(self.mod.a.indices.contains(indexPath.row)) {
             cell.textLabel?.text = self.mod.a[indexPath.row]["last_name"].stringValue + ", " + self.mod.a[indexPath.row]["first_name"].stringValue
-            cell.detailTextLabel?.text = self.mod.a[indexPath.row]["state"].stringValue
+            var state = self.states[self.mod.a[indexPath.row]["state"].stringValue]
+            cell.detailTextLabel?.text = state
 //            var filePath = "https://theunitedstates.io/images/congress/original/"+self.mod.a[indexPath.row]["]bioguide_id"].stringValue+".jpg"
 //            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
 //                cell.contentView.contentMode = .scaleAspectFit
