@@ -16,7 +16,10 @@ class model {
     var a = [JSON]()
     //0 for legislators
     func getJSON(index: Int){
-        print("success")
+//        if(!self.a.isEmpty) {
+//            return
+//        }
+//        print("success")
 
         let url = "https://2-dot-congress-148223.appspot.com/main.php?action=content"
         Alamofire.request(url).responseJSON { (Response) -> Void in
