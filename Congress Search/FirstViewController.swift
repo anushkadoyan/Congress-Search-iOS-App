@@ -40,7 +40,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "legCell", for: indexPath)
         if(self.mod.a.indices.contains(indexPath.row)) {
             cell.textLabel?.text = self.mod.a[indexPath.row]["last_name"].stringValue + ", " + self.mod.a[indexPath.row]["first_name"].stringValue
-            cell.detailTextLabel?.text = "lol"
+            cell.detailTextLabel?.text = self.mod.a[indexPath.row]["state"].stringValue
+//            var filePath = "https://theunitedstates.io/images/congress/original/"+self.mod.a[indexPath.row]["]bioguide_id"].stringValue+".jpg"
+//            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
+//                cell.contentView.contentMode = .scaleAspectFit
+//                cell.contentView.im = image
+//            }
+         //   cell.imageView? = load_image("https://theunitedstates.io/images/congress/original/"+self.mod.a[indexPath.row]["]bioguide_id"]+".jpg")
+            
         }
 //        print(tableTitle[indexPath.row])
 //        cell.detailTextLabel?.body!.text = tableBody[indexPath.row]
