@@ -34,7 +34,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 538
+        return self.mod.a.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,7 +42,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "legSenateCell", for: indexPath)
         if(self.mod.a.indices.contains(indexPath.row)) {
             cell.textLabel?.text = self.mod.a[indexPath.row]["last_name"].stringValue + ", " + self.mod.a[indexPath.row]["first_name"].stringValue
-            var state = self.states[self.mod.a[indexPath.row]["state"].stringValue]
+            let state = self.states[self.mod.a[indexPath.row]["state"].stringValue]
             cell.detailTextLabel?.text = state
             //            var filePath = "https://theunitedstates.io/images/congress/original/"+self.mod.a[indexPath.row]["]bioguide_id"].stringValue+".jpg"
             //            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {

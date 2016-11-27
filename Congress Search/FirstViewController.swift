@@ -13,7 +13,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var legTable: UITableView!
     let mod = model()
+    var letters: [Character] = []
+    var data: [String] = []
+    var nameData: [String] = []
+
+    var contacts = [Character: [String]]()
+    
      var states = [     "AL": "Alabama",     "AK": "Alaska",     "AS": "American Samoa",     "AZ": "Arizona",     "AR": "Arkansas",     "CA": "California",     "CO": "Colorado",     "CT": "Connecticut",     "DE": "Delaware",     "DC": "District Of Columbia",    "FL": "Florida",     "GA": "Georgia",     "GU": "Guam",     "HI": "Hawaii",     "ID": "Idaho",     "IL": "Illinois",     "IN": "Indiana",     "IA": "Iowa",     "KS": "Kansas",     "KY": "Kentucky",     "LA": "Louisiana",     "ME": "Maine",     "MH": "Marshall Islands",     "MD": "Maryland",     "MA": "Massachusetts",     "MI": "Michigan",     "MN": "Minnesota",     "MS": "Mississippi",     "MO": "Missouri",     "MT": "Montana",     "NE": "Nebraska",     "NV": "Nevada",     "NH": "New Hampshire",     "NJ": "New Jersey",     "NM": "New Mexico",     "NY": "New York",     "NC": "North Carolina",     "ND": "North Dakota",     "MP": "Northern Mariana Islands",     "OH": "Ohio",     "OK": "Oklahoma",     "OR": "Oregon",     "PW": "Palau",     "PA": "Pennsylvania",     "PR": "Puerto Rico",     "RI": "Rhode Island",     "SC": "South Carolina",     "SD": "South Dakota",     "TN": "Tennessee",     "TX": "Texas",     "UT": "Utah",     "VT": "Vermont",     "VI": "Virgin Islands",     "VA": "Virginia",     "WA": "Washington",     "WV": "West Virginia",     "WI": "Wisconsin",     "WY": "Wyoming" ];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         legTable.delegate = self
@@ -22,25 +29,63 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.mod.getJSON(index:0)
             // Do any additional setup after loading the view, typically from a nib.
     }
+    
     func reloadTableData(_ notification: Notification) {
-        print("reload")
+        
+        if(self.mod.a.count>0) {
+            for item in self.mod.a {
+                data.append(item["state"].stringValue)
+            }
+           
+            letters = data.map { (name) -> Character in
+                return name[name.startIndex]
+            }
+            letters = letters.sorted()
+            letters = letters.reduce([], { (list, name) -> [Character] in
+                if !list.contains(name) {
+                    return list + [name]
+                }
+                return list
+            })
+            for item in self.mod.a {
+                nameData.append(item["last_name"].stringValue+", "+item["first_name"].stringValue)
+            }
+            for entry in nameData {
+                
+                if contacts[entry[entry.startIndex]] == nil {
+                    contacts[entry[entry.startIndex]] = [String]()
+                }
+                
+                contacts[entry[entry.startIndex]]!.append(entry)
+                
+            }
+            for (letter, list) in contacts {
+                contacts[letter] = list.sorted()
+            }
+        }
         legTable.reloadData()
     }
-
-    convenience init() {
-        self.init(nibName:nil, bundle:nil)
+    
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.contacts[letters[section]]!.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 538
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return String(self.letters[section])
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return self.letters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        //contacts[letters[i]][c]
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "legCell", for: indexPath)
         if(self.mod.a.indices.contains(indexPath.row)) {
-            cell.textLabel?.text = self.mod.a[indexPath.row]["last_name"].stringValue + ", " + self.mod.a[indexPath.row]["first_name"].stringValue
-            var state = self.states[self.mod.a[indexPath.row]["state"].stringValue]
+            cell.textLabel?.text = contacts[letters[indexPath.section]]?[indexPath.row]
+            let state = self.states[self.mod.a[indexPath.row]["state"].stringValue]
             cell.detailTextLabel?.text = state
 //            var filePath = "https://theunitedstates.io/images/congress/original/"+self.mod.a[indexPath.row]["]bioguide_id"].stringValue+".jpg"
 //            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
@@ -50,8 +95,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
          //   cell.imageView? = load_image("https://theunitedstates.io/images/congress/original/"+self.mod.a[indexPath.row]["]bioguide_id"]+".jpg")
             
         }
-//        print(tableTitle[indexPath.row])
-//        cell.detailTextLabel?.body!.text = tableBody[indexPath.row]
         return cell
     }
     override func didReceiveMemoryWarning() {

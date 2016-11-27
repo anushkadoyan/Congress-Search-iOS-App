@@ -11,7 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 class model {
-//    static let fvc = FirstViewController()
     var jsonObject: [JSON] = []
     var a = [JSON]()
     //0 for legislators
