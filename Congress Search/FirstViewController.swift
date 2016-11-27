@@ -17,7 +17,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var data: [String] = []
     var nameData: [String] = []
 
-    var contacts = [Character: [String]]()
+    var contacts = [Character: [JSON]]()
     
      var states = [     "AL": "Alabama",     "AK": "Alaska",     "AS": "American Samoa",     "AZ": "Arizona",     "AR": "Arkansas",     "CA": "California",     "CO": "Colorado",     "CT": "Connecticut",     "DE": "Delaware",     "DC": "District Of Columbia",    "FL": "Florida",     "GA": "Georgia",     "GU": "Guam",     "HI": "Hawaii",     "ID": "Idaho",     "IL": "Illinois",     "IN": "Indiana",     "IA": "Iowa",     "KS": "Kansas",     "KY": "Kentucky",     "LA": "Louisiana",     "ME": "Maine",     "MH": "Marshall Islands",     "MD": "Maryland",     "MA": "Massachusetts",     "MI": "Michigan",     "MN": "Minnesota",     "MS": "Mississippi",     "MO": "Missouri",     "MT": "Montana",     "NE": "Nebraska",     "NV": "Nevada",     "NH": "New Hampshire",     "NJ": "New Jersey",     "NM": "New Mexico",     "NY": "New York",     "NC": "North Carolina",     "ND": "North Dakota",     "MP": "Northern Mariana Islands",     "OH": "Ohio",     "OK": "Oklahoma",     "OR": "Oregon",     "PW": "Palau",     "PA": "Pennsylvania",     "PR": "Puerto Rico",     "RI": "Rhode Island",     "SC": "South Carolina",     "SD": "South Dakota",     "TN": "Tennessee",     "TX": "Texas",     "UT": "Utah",     "VT": "Vermont",     "VI": "Virgin Islands",     "VA": "Virginia",     "WA": "Washington",     "WV": "West Virginia",     "WI": "Wisconsin",     "WY": "Wyoming" ];
     
@@ -50,18 +50,21 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             for item in self.mod.a {
                 nameData.append(item["last_name"].stringValue+", "+item["first_name"].stringValue)
             }
-            for entry in nameData {
+            for entry in self.mod.a {
                 
-                if contacts[entry[entry.startIndex]] == nil {
-                    contacts[entry[entry.startIndex]] = [String]()
+                if contacts[entry["state"].stringValue[entry["state"].stringValue.startIndex]] == nil {
+                    contacts[entry["state"].stringValue[entry["state"].stringValue.startIndex]] = [JSON]()
                 }
                 
-                contacts[entry[entry.startIndex]]!.append(entry)
+                
+                contacts[entry["state"].stringValue[entry["state"].stringValue.startIndex]]!.append(entry)
+                //(entry["last_name"].stringValue+", "+entry["first_name"].stringValue)
                 
             }
-            for (letter, list) in contacts {
-                contacts[letter] = list.sorted()
-            }
+//            for (letter, list) in contacts {
+//                contacts[letter] = list.sorted()
+//            }
+            print(contacts)
         }
         legTable.reloadData()
     }
@@ -80,12 +83,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //and the content for a specific cell c in section i is:
         //contacts[letters[i]][c]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "legCell", for: indexPath)
         if(self.mod.a.indices.contains(indexPath.row)) {
-            cell.textLabel?.text = contacts[letters[indexPath.section]]?[indexPath.row]
-            let state = self.states[self.mod.a[indexPath.row]["state"].stringValue]
+            cell.textLabel?.text = (contacts[letters[indexPath.section]]?[indexPath.row]["last_name"].stringValue)!+", "+(contacts[letters[indexPath.section]]?[indexPath.row]["first_name"].stringValue)!
+            let state = self.states[(contacts[letters[indexPath.section]]?[indexPath.row]["state"].stringValue)!]
             cell.detailTextLabel?.text = state
 //            var filePath = "https://theunitedstates.io/images/congress/original/"+self.mod.a[indexPath.row]["]bioguide_id"].stringValue+".jpg"
 //            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
