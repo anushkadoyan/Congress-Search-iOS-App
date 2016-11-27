@@ -12,7 +12,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+//    let mod = model()
     var window: UIWindow?
     
 
@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appearance = UITabBarItem.appearance()
         let attributes = [NSFontAttributeName:UIFont(name: "Arial", size: 20)]
         appearance.setTitleTextAttributes(attributes, for: .normal)
+//        self.mod.getJSON()
         return true
         
     }

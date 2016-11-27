@@ -12,7 +12,9 @@ import SwiftyJSON
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var legTable: UITableView!
+    var legs = [JSON]()
     let mod = model()
+
     var letters: [Character] = []
     var data: [String] = []
     var nameData: [String] = []
@@ -26,14 +28,19 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         legTable.delegate = self
         legTable.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData(_:)), name: .reload, object: nil)
-        self.mod.getJSON(index:0)
+        self.mod.getLegs()
+
+//        self.mod.getJSON(index:0)
             // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
     func reloadTableData(_ notification: Notification) {
-        
-        if(self.mod.a.count>0) {
-            for item in self.mod.a {
+//        let APIdata = notification.object as! JSON
+//        legs = APIdata[0]["results"].array!
+        legs = self.mod.leg
+        if(legs.count>0) {
+            for item in legs {
                 data.append(item["state"].stringValue)
             }
            
@@ -47,10 +54,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
                 return list
             })
-            for item in self.mod.a {
+            for item in legs {
                 nameData.append(item["last_name"].stringValue+", "+item["first_name"].stringValue)
             }
-            for entry in self.mod.a {
+            for entry in legs {
                 
                 if contacts[entry["state"].stringValue[entry["state"].stringValue.startIndex]] == nil {
                     contacts[entry["state"].stringValue[entry["state"].stringValue.startIndex]] = [JSON]()
@@ -64,7 +71,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //            for (letter, list) in contacts {
 //                contacts[letter] = list.sorted()
 //            }
-            print(contacts)
         }
         legTable.reloadData()
     }
@@ -87,16 +93,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //contacts[letters[i]][c]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "legCell", for: indexPath)
-        if(self.mod.a.indices.contains(indexPath.row)) {
+        if(legs.indices.contains(indexPath.row)) {
             cell.textLabel?.text = (contacts[letters[indexPath.section]]?[indexPath.row]["last_name"].stringValue)!+", "+(contacts[letters[indexPath.section]]?[indexPath.row]["first_name"].stringValue)!
             let state = self.states[(contacts[letters[indexPath.section]]?[indexPath.row]["state"].stringValue)!]
             cell.detailTextLabel?.text = state
-//            var filePath = "https://theunitedstates.io/images/congress/original/"+self.mod.a[indexPath.row]["]bioguide_id"].stringValue+".jpg"
+//            var filePath = "https://theunitedstates.io/images/congress/original/"+legs[indexPath.row]["]bioguide_id"].stringValue+".jpg"
 //            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
 //                cell.contentView.contentMode = .scaleAspectFit
 //                cell.contentView.im = image
 //            }
-         //   cell.imageView? = load_image("https://theunitedstates.io/images/congress/original/"+self.mod.a[indexPath.row]["]bioguide_id"]+".jpg")
+         //   cell.imageView? = load_image("https://theunitedstates.io/images/congress/original/"+legs[indexPath.row]["]bioguide_id"]+".jpg")
             
         }
         return cell
