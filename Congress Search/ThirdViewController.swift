@@ -48,6 +48,13 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.textLabel?.text = legs[indexPath.row]["last_name"].stringValue + ", " + legs[indexPath.row]["first_name"].stringValue
             let state = self.states[legs[indexPath.row]["state"].stringValue]
             cell.detailTextLabel?.text = state
+            let filePath = "https://theunitedstates.io/images/congress/original/"+(legs[indexPath.row]["bioguide_id"].stringValue)+".jpg"
+            
+            //(contacts[letters[indexPath.section]]?[indexPath.row]
+            cell.imageView?.image = UIImage(named: "placeholder.jpg")
+            
+            cell.imageView?.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
+
             //            var filePath = "https://theunitedstates.io/images/congress/original/"+legs[indexPath.row]["]bioguide_id"].stringValue+".jpg"
             //            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
             //                cell.contentView.contentMode = .scaleAspectFit
