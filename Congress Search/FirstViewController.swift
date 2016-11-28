@@ -16,6 +16,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let mod = model()
 
     var letters: [Character] = []
+    var lettersInString: [String] = []
     var data: [String] = []
     var nameData: [String] = []
 
@@ -54,6 +55,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
                 return list
             })
+            lettersInString = Array(letters).map { String($0) }
+
             for item in legs {
                 nameData.append(item["last_name"].stringValue+", "+item["first_name"].stringValue)
             }
@@ -75,6 +78,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         legTable.reloadData()
     }
     
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return lettersInString
+    }
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.contacts[letters[section]]!.count
     }
