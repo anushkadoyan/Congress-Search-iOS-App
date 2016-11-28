@@ -11,6 +11,7 @@
 		79D5D5D1E16F9A299ABEAB30 /* Pods_Congress_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06716A5944CA378C7F2720D1 /* Pods_Congress_Search.framework */; };
 		84752E001DE98C1F00C388B8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752DFF1DE98C1F00C388B8 /* Notification.swift */; };
 		84752E021DEA498100C388B8 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752E011DEA498100C388B8 /* ThirdViewController.swift */; };
+		84752E061DEBE44600C388B8 /* UIImageView+stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84752E051DEBE44600C388B8 /* UIImageView+stuff.swift */; };
 		84C2211A1DE8E9DC000090C6 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C221191DE8E9DC000090C6 /* model.swift */; };
 		84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C01DE696D000D6C0E3 /* AppDelegate.swift */; };
 		84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C21DE696D000D6C0E3 /* FirstViewController.swift */; };
@@ -49,6 +50,7 @@
 		69DAAF624A3C8818BDDEA8C0 /* Pods-Congress Search.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Congress Search.release.xcconfig"; path = "Pods/Target Support Files/Pods-Congress Search/Pods-Congress Search.release.xcconfig"; sourceTree = "<group>"; };
 		84752DFF1DE98C1F00C388B8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		84752E011DEA498100C388B8 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		84752E051DEBE44600C388B8 /* UIImageView+stuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+stuff.swift"; sourceTree = "<group>"; };
 		84C221191DE8E9DC000090C6 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		84F369BD1DE696D000D6C0E3 /* Congress Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Congress Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F369C01DE696D000D6C0E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				84F369CE1DE696D000D6C0E3 /* Info.plist */,
 				84C221191DE8E9DC000090C6 /* model.swift */,
 				84752DFF1DE98C1F00C388B8 /* Notification.swift */,
+				84752E051DEBE44600C388B8 /* UIImageView+stuff.swift */,
 			);
 			path = "Congress Search";
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */,
 				84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */,
 				84752E021DEA498100C388B8 /* ThirdViewController.swift in Sources */,
+				84752E061DEBE44600C388B8 /* UIImageView+stuff.swift in Sources */,
 				84C2211A1DE8E9DC000090C6 /* model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

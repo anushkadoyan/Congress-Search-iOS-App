@@ -29,16 +29,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         legTable.delegate = self
         legTable.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData(_:)), name: .reload, object: nil)
-        self.mod.getLegs()
+//        NotificationCenter.default.addObserver(self, selector: #selector(reloadData(_:)), name: .reloadAgain, object: nil)
 
-//        self.mod.getJSON(index:0)
-            // Do any additional setup after loading the view, typically from a nib.
+        self.mod.getLegs()
     }
     
-    
+    func reloadData(_ notification: Notification) {
+        legTable.reloadData()
+    }
     func reloadTableData(_ notification: Notification) {
-//        let APIdata = notification.object as! JSON
-//        legs = APIdata[0]["results"].array!
         legs = self.mod.leg
         if(legs.count>0) {
             for item in legs {
@@ -71,9 +70,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 //(entry["last_name"].stringValue+", "+entry["first_name"].stringValue)
                 
             }
-//            for (letter, list) in contacts {
-//                contacts[letter] = list.sorted()
-//            }
+
         }
         legTable.reloadData()
     }
@@ -99,16 +96,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //contacts[letters[i]][c]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "legCell", for: indexPath)
-        if(legs.indices.contains(indexPath.row)) {
+               if(legs.indices.contains(indexPath.row)) {
             cell.textLabel?.text = (contacts[letters[indexPath.section]]?[indexPath.row]["last_name"].stringValue)!+", "+(contacts[letters[indexPath.section]]?[indexPath.row]["first_name"].stringValue)!
             let state = self.states[(contacts[letters[indexPath.section]]?[indexPath.row]["state"].stringValue)!]
             cell.detailTextLabel?.text = state
-            var filePath = "https://theunitedstates.io/images/congress/original/"+(contacts[letters[indexPath.section]]?[indexPath.row]["bioguide_id"].stringValue)!+".jpg"
-            if let url  = NSURL(string: filePath),
-                let thing = NSData(contentsOf: url as URL)
-            {
-                cell.imageView?.image = UIImage(data: thing as Data)
-            }
+            let filePath = "https://theunitedstates.io/images/congress/original/"+(contacts[letters[indexPath.section]]?[indexPath.row]["bioguide_id"].stringValue)!+".jpg"
+
+            //(contacts[letters[indexPath.section]]?[indexPath.row]
+            cell.imageView?.image = UIImage(named: "placeholder.jpg")
+
+            cell.imageView?.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
 
 //            cell.imageView.image = [UIImage imageWithData:
 //                [NSData dataWithContentsOfURL:venue.imageURL]];

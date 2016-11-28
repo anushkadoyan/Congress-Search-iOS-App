@@ -53,6 +53,17 @@ class model {
                 case .success(let value):
                     //                let json = JSON(value)
                     let jsonHouse = JSON(value)["results"]
+//                    
+//                    for var entry in jsonHouse.array! {
+//                        var filePath = entry["bioguide_id"].stringValue+".jpg"
+//                        if let url  = NSURL(string: filePath),
+//                            let thing = NSData(contentsOf: url as URL){
+//                            entry["image"] = thing
+//                        }
+//                    }
+//
+                   
+                    
                     self.legHouse = jsonHouse.array!
 
                     DispatchQueue.main.async {

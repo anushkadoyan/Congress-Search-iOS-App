@@ -9,4 +9,6 @@
 import Foundation
 extension Notification.Name {
     static let reload = Notification.Name("reload")
+    static let reloadAgain = Notification.Name("reloadAgain")
+
 }
