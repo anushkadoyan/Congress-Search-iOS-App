@@ -103,6 +103,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.textLabel?.text = (contacts[letters[indexPath.section]]?[indexPath.row]["last_name"].stringValue)!+", "+(contacts[letters[indexPath.section]]?[indexPath.row]["first_name"].stringValue)!
             let state = self.states[(contacts[letters[indexPath.section]]?[indexPath.row]["state"].stringValue)!]
             cell.detailTextLabel?.text = state
+            var filePath = "https://theunitedstates.io/images/congress/original/"+(contacts[letters[indexPath.section]]?[indexPath.row]["bioguide_id"].stringValue)!+".jpg"
+            if let url  = NSURL(string: filePath),
+                let thing = NSData(contentsOf: url as URL)
+            {
+                cell.imageView?.image = UIImage(data: thing as Data)
+            }
+
+//            cell.imageView.image = [UIImage imageWithData:
+//                [NSData dataWithContentsOfURL:venue.imageURL]];
 //            var filePath = "https://theunitedstates.io/images/congress/original/"+legs[indexPath.row]["]bioguide_id"].stringValue+".jpg"
 //            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
 //                cell.contentView.contentMode = .scaleAspectFit
