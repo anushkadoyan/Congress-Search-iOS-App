@@ -60,8 +60,10 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         } else {
             self.leg["gender"].stringValue = "Female"
         }
-      self.leg["chamber"].stringValue.capitalizeFirstLetter()
-       let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
+        //UIApplication.shared.openURL(URL(string: "http://www.stackoverflow.com")!)
+ 
+        self.leg["chamber"].stringValue.capitalizeFirstLetter()
+        let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
         self.detailImage.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
         self.legDetailsArray = ["First Name","Last Name","State","Birth Date","Gender","Chamber","Fax No.","Twitter","Facebook","Website","Office No.","Term ends on"]
         self.legDetailsDetailsArray=[self.leg["first_name"].stringValue ,self.leg["last_name"].stringValue ,state! ]
@@ -75,14 +77,9 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         self.legDetailsDetailsArray.append(self.leg["office"].stringValue )
         self.legDetailsDetailsArray.append(termEnd )
         for var thing in self.legDetailsDetailsArray {
-            print(thing.characters.count)
             if (thing  == nil || thing.characters.count == 0)  {
-                
                 self.legDetailsDetailsArray[self.legDetailsDetailsArray.index(of:thing)!] = "N.A."
-//                print(key)
-//                self.legDetailsDetailsArray[key] = "N.A."
             }
-            
         }
 
     }
@@ -96,7 +93,23 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "stateDetail", for: indexPath)
         if(self.legDetailsArray.indices.contains(indexPath.row)) {
             cell.textLabel?.text = self.legDetailsArray[indexPath.row]
-            cell.detailTextLabel?.text = legDetailsDetailsArray[indexPath.row] as! String
+            if(self.legDetailsArray[indexPath.row] == "Twitter") {
+                // You must set the formatting of the link manually
+                            let linkAttributes = [
+                                NSLinkAttributeName: NSURL(string: "https://www.twitter.com/"+legDetailsDetailsArray[indexPath.row])!,
+                                NSForegroundColorAttributeName: UIColor.blue
+                                ] as [String : Any]
+                
+                            let attributedString = NSMutableAttributedString(string: "Twitter")
+                
+                // Set the 'click here' substring to be the link
+                            attributedString.setAttributes(linkAttributes, range: NSMakeRange(0, 7))
+                cell.detailTextLabel?.attributedText = attributedString
+            }
+
+            else {
+                cell.detailTextLabel?.text = legDetailsDetailsArray[indexPath.row] as! String
+            }
         
         }
         return cell
