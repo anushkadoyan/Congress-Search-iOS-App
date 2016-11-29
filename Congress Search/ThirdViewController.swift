@@ -54,18 +54,8 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.imageView?.image = UIImage(named: "placeholder.jpg")
             
             cell.imageView?.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
-
-            //            var filePath = "https://theunitedstates.io/images/congress/original/"+legs[indexPath.row]["]bioguide_id"].stringValue+".jpg"
-            //            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
-            //                cell.contentView.contentMode = .scaleAspectFit
-            //                cell.contentView.im = image
-            //            }
-            //   cell.imageView? = load_image("https://theunitedstates.io/images/congress/original/"+legs[indexPath.row]["]bioguide_id"]+".jpg")
-            
         }
-        //        print(tableTitle[indexPath.row])
-        //        cell.detailTextLabel?.body!.text = tableBody[indexPath.row]
-        return cell
+              return cell
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

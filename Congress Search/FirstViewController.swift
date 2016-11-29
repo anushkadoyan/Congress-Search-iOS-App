@@ -92,10 +92,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //and the content for a specific cell c in section i is:
-        //contacts[letters[i]][c]
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "legCell", for: indexPath)
+               let cell = tableView.dequeueReusableCell(withIdentifier: "legCell", for: indexPath)
                if(legs.indices.contains(indexPath.row)) {
             cell.textLabel?.text = (contacts[letters[indexPath.section]]?[indexPath.row]["last_name"].stringValue)!+", "+(contacts[letters[indexPath.section]]?[indexPath.row]["first_name"].stringValue)!
             let state = self.states[(contacts[letters[indexPath.section]]?[indexPath.row]["state"].stringValue)!]
@@ -106,18 +103,26 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.imageView?.image = UIImage(named: "placeholder.jpg")
 
             cell.imageView?.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
+            cell.imageView?.clipsToBounds = true
+//                performSegue(withIdentifier: "stateSeg", sender: nil)
 
-//            cell.imageView.image = [UIImage imageWithData:
-//                [NSData dataWithContentsOfURL:venue.imageURL]];
-//            var filePath = "https://theunitedstates.io/images/congress/original/"+legs[indexPath.row]["]bioguide_id"].stringValue+".jpg"
-//            if let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
-//                cell.contentView.contentMode = .scaleAspectFit
-//                cell.contentView.im = image
-//            }
-         //   cell.imageView? = load_image("https://theunitedstates.io/images/congress/original/"+legs[indexPath.row]["]bioguide_id"]+".jpg")
-            
         }
         return cell
+    }
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "stateSeg", sender: indexPath.row)
+    }
+        // pass any object as parameter, i.e. the tapped row
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "stateSeg"{
+//            let nextScene = segue.destination as? StateDetailsViewController ,
+//           if let indexPath = self.legTable.indexPathForSelectedRow {
+////                let selectedVehicle = vehicles[indexPath.row]
+////                nextScene.currentVehicle = selectedVehicle
+//            }
+        }
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

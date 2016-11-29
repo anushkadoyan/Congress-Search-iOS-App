@@ -33,7 +33,6 @@ class model {
             case .success(let value):
                 let json = JSON(value)["results"]
                 self.leg = json.array!
-                print(self.leg)
                 
                 DispatchQueue.main.async {
                     NotificationCenter.default.post(name: .reload, object: nil)
