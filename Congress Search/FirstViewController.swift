@@ -115,14 +115,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // pass any object as parameter, i.e. the tapped row
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "stateSeg"{
-//            let nextScene = segue.destination as? StateDetailsViewController ,
-//           if let indexPath = self.legTable.indexPathForSelectedRow {
-////                let selectedVehicle = vehicles[indexPath.row]
-////                nextScene.currentVehicle = selectedVehicle
-//            }
-        }
-
+        if segue.identifier == "stateSeg",
+                let nextScene = segue.destination as? StateDetailsViewController ,
+                let indexPath = self.legTable.indexPathForSelectedRow {
+                let selectedLeg = contacts[letters[indexPath.section]]?[indexPath.row]
+                nextScene.leg = selectedLeg!
+            }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

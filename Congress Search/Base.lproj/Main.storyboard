@@ -120,7 +120,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Legislator Details" id="Eav-qs-BYo">
-                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="0cx-Aw-bW0">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="0cx-Aw-bW0">
                                             <connections>
                                                 <action selector="backButtonClicked:" destination="otW-yZ-58E" id="R7i-KW-8nb"/>
                                             </connections>
@@ -138,6 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="0cx-Aw-bW0" id="Eq8-H1-3bq"/>
+                        <outlet property="detailImage" destination="QE3-MA-kz6" id="cfs-C3-77z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdE-V3-Nzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,7 +186,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Cro-Kb-2gz" kind="presentation" id="7Q2-Zv-hUr"/>
+                                            <segue destination="Cro-Kb-2gz" kind="presentation" identifier="houseSeg" id="7Q2-Zv-hUr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -266,7 +267,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="31T-iQ-fpU" kind="presentation" id="Qay-wG-E4M"/>
+                                            <segue destination="31T-iQ-fpU" kind="presentation" identifier="senateSeg" id="Qay-wG-E4M"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -316,7 +317,7 @@
         <!--House Details View Controller-->
         <scene sceneID="JkA-Oy-5QP">
             <objects>
-                <viewController id="Cro-Kb-2gz" customClass="HouseDetailsViewController" sceneMemberID="viewController">
+                <viewController id="Cro-Kb-2gz" customClass="HouseDetailsViewController" customModule="Congress_Search" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FWH-XC-rmS"/>
                         <viewControllerLayoutGuide type="bottom" id="zK2-dY-thq"/>
@@ -330,7 +331,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stateDetail" id="I8A-xV-zdK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="houseDetail" id="I8A-xV-zdK">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I8A-xV-zdK" id="Gf6-p6-NQz">
@@ -345,9 +346,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Legislator Details" id="FQb-5A-lFw">
-                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="5b2-XK-elV">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="5b2-XK-elV">
                                             <connections>
-                                                <action selector="backButtonClicked:" destination="Cro-Kb-2gz" id="yfP-Dw-IV1"/>
+                                                <action selector="backButtonClicked:" destination="Cro-Kb-2gz" id="aoa-xD-8IA"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="t4a-B4-Aar"/>
@@ -362,7 +363,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="5b2-XK-elV" id="Px5-FQ-V81"/>
+                        <outlet property="backButton" destination="5b2-XK-elV" id="r8D-mC-0gk"/>
+                        <outlet property="detailImage" destination="9rZ-h3-exc" id="SK5-Ql-49n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qjy-a6-j6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -372,7 +374,7 @@
         <!--Senate Details View Controller-->
         <scene sceneID="Qkn-pg-kJi">
             <objects>
-                <viewController id="31T-iQ-fpU" customClass="SenateDetailsViewController" sceneMemberID="viewController">
+                <viewController id="31T-iQ-fpU" customClass="SenateDetailsViewController" customModule="Congress_Search" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WDL-hb-m7Q"/>
                         <viewControllerLayoutGuide type="bottom" id="nls-dH-gcu"/>
@@ -386,7 +388,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stateDetail" id="Aic-0c-g1o">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="senateDetail" id="Aic-0c-g1o">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aic-0c-g1o" id="CK3-Dj-JiO">
@@ -401,9 +403,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Legislator Details" id="D5u-Xk-Nan">
-                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="YeU-ks-OX6">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="YeU-ks-OX6">
                                             <connections>
-                                                <action selector="backButtonClicked:" destination="31T-iQ-fpU" id="f71-dw-tke"/>
+                                                <action selector="backButtonClicked:" destination="31T-iQ-fpU" id="0uP-NZ-dQB"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="b6p-Lo-uHv"/>
@@ -418,7 +420,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="YeU-ks-OX6" id="4Kt-uS-hGl"/>
+                        <outlet property="backButton" destination="YeU-ks-OX6" id="7kf-o2-h4e"/>
+                        <outlet property="detailImage" destination="YHn-3Q-de0" id="OmD-XA-T9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYu-sF-aqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
