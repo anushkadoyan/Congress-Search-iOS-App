@@ -234,19 +234,6 @@
             </objects>
             <point key="canvasLocation" x="763.75" y="478.01666666666665"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="wMo-IH-Rer">
-            <objects>
-                <navigationController id="P4X-TR-wHK" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sQn-Yc-kXv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rLH-uY-wiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-605.625" y="743.70499999999993"/>
-        </scene>
         <!--Legislators-->
         <scene sceneID="t0n-Vc-HAa">
             <objects>
@@ -313,12 +300,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o78-kG-1z3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763.75" y="1250.625"/>
+            <point key="canvasLocation" x="764" y="1251"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Left Menu-->
+        <scene sceneID="Vzr-tS-tGx">
+            <objects>
+                <viewController storyboardIdentifier="LeftMenu" id="130-5k-fTC" customClass="LeftMenu" customModule="Congress_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5sB-Bp-jl0"/>
+                        <viewControllerLayoutGuide type="bottom" id="qmf-6u-U1A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RoR-AI-7xe" customClass="LeftMenu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Tp-a8-sB5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="Qzo-HF-pGU" kind="embed" id="2Z4-Fi-beL"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Us5-JV-idN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1107.5" y="331.5"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="OWc-0M-8Ab">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caM-1z-pLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Qzo-HF-pGU" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WBl-hm-iZh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="D4D-h6-Zhc">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D4D-h6-Zhc" id="3eO-mk-hXo">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="push" id="gsa-0j-vGe"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qzo-HF-pGU" id="dFq-OB-zgh"/>
+                            <outlet property="delegate" destination="Qzo-HF-pGU" id="KsN-rn-o9F"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-439" y="281"/>
+        </scene>
+        <!--Leg Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="LegTabBarController" id="49e-Tb-3d3" customClass="LegTabBarController" customModule="Congress_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dY4-MZ-3a4"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -333,7 +379,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32.5" y="25.568333333333332"/>
+            <point key="canvasLocation" x="152" y="437"/>
         </scene>
         <!--House Details View Controller-->
         <scene sceneID="JkA-Oy-5QP">

@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import UIKit
-
+import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appearance = UITabBarItem.appearance()
         let attributes = [NSFontAttributeName:UIFont(name: "Arial", size: 20)]
         appearance.setTitleTextAttributes(attributes, for: .normal)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "LegTabBarController") as! LegTabBarController
+        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenu") as! LeftMenu
+        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController)
+        self.window?.rootViewController = slideMenuController
+        self.window?.makeKeyAndVisible()
+
+//        let mainViewController =  storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+//        let slideMenuController = SlideMenuController(mainViewController: (LegTabBarController as? UITabBarController)!, leftMenuViewController: (LeftMenu as? UIViewController)!)
+//        self.window?.rootViewController = slideMenuController
+//        self.window?.makeKeyAndVisible(
+        
+        
 //        self.mod.getJSON()
         return true
         
