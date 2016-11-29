@@ -46,12 +46,12 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         
         return timeStamp
     }
+    
     override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
         print(self.leg)
 
-//        print (self.leg)
         let state = self.states[(self.leg["state"].stringValue)]
         let termEnd =  (convertDateFormater(date: self.leg["term_end"].stringValue))
         let birthday =  (convertDateFormater(date: self.leg["birthday"].stringValue))
@@ -60,6 +60,7 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         } else {
             self.leg["gender"].stringValue = "Female"
         }
+      self.leg["chamber"].stringValue.capitalizeFirstLetter()
        let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
         self.detailImage.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
         self.legDetailsArray = ["First Name","Last Name","State","Birth Date","Gender","Chamber","Fax No.","Twitter","Facebook","Website","Office No.","Term ends on"]
