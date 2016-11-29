@@ -120,6 +120,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let indexPath = self.legTable.indexPathForSelectedRow {
                 let selectedLeg = contacts[letters[indexPath.section]]?[indexPath.row]
                 nextScene.leg = selectedLeg!
+            
             }
     }
     override func didReceiveMemoryWarning() {

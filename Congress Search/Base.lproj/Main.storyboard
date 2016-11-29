@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,8 +14,8 @@
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Congress_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                        <viewControllerLayoutGuide type="top" id="kBG-Ix-R9o"/>
+                        <viewControllerLayoutGuide type="bottom" id="s7m-3i-MUS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -30,18 +30,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="7x3-fv-Huq" id="5tC-ch-JGs">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="inm-aL-qPw">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SHI-PG-Ncf">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -50,7 +50,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="otW-yZ-58E" kind="presentation" identifier="stateSeg" trigger="accessoryAction" id="U1m-o3-3cW"/>
+                                            <segue destination="otW-yZ-58E" kind="modal" identifier="stateSeg" trigger="accessoryAction" id="U1m-o3-3cW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -86,15 +86,15 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1221.5999999999999" y="-249.62518740629687"/>
+            <point key="canvasLocation" x="763.5" y="-277.5"/>
         </scene>
         <!--State Details View Controller-->
         <scene sceneID="vo6-f3-9Kb">
             <objects>
                 <viewController id="otW-yZ-58E" customClass="StateDetailsViewController" customModule="Congress_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bi4-dH-5IS"/>
-                        <viewControllerLayoutGuide type="bottom" id="GoJ-1N-7Q8"/>
+                        <viewControllerLayoutGuide type="top" id="icQ-Ks-OhM"/>
+                        <viewControllerLayoutGuide type="bottom" id="XYQ-ec-PBZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h5x-dF-udH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -105,15 +105,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stateDetail" id="EPF-Cp-H7z">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stateDetail" textLabel="vwR-F8-h9u" detailTextLabel="Apa-z6-9si" style="IBUITableViewCellStyleValue2" id="EPF-Cp-H7z">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EPF-Cp-H7z" id="PdE-z1-nio">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vwR-F8-h9u">
+                                                    <rect key="frame" x="15" y="14" width="91" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Apa-z6-9si">
+                                                    <rect key="frame" x="112" y="14" width="35" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="otW-yZ-58E" id="bh1-1c-Gfp"/>
+                                    <outlet property="delegate" destination="otW-yZ-58E" id="2NA-FV-kLL"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9Q-0x-q79">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -139,19 +159,20 @@
                     <connections>
                         <outlet property="backButton" destination="0cx-Aw-bW0" id="Eq8-H1-3bq"/>
                         <outlet property="detailImage" destination="QE3-MA-kz6" id="cfs-C3-77z"/>
+                        <outlet property="legDetailsTable" destination="VFW-R2-Iyk" id="fH9-qV-5gb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdE-V3-Nzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="-250"/>
+            <point key="canvasLocation" x="1325.625" y="-277.91666666666663"/>
         </scene>
         <!--Legislators-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Congress_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                        <viewControllerLayoutGuide type="top" id="WXt-AQ-daf"/>
+                        <viewControllerLayoutGuide type="bottom" id="8nR-EY-iq7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -166,18 +187,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vCt-NQ-qo6" id="hUD-W8-ykc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vvZ-At-j1w">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0gG-FT-LVZ">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -186,7 +207,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Cro-Kb-2gz" kind="presentation" identifier="houseSeg" id="7Q2-Zv-hUr"/>
+                                            <segue destination="Cro-Kb-2gz" kind="modal" identifier="houseSeg" id="7Q2-Zv-hUr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -211,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222" y="430"/>
+            <point key="canvasLocation" x="763.75" y="478.01666666666665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wMo-IH-Rer">
@@ -224,15 +245,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLH-uY-wiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-969" y="669"/>
+            <point key="canvasLocation" x="-605.625" y="743.70499999999993"/>
         </scene>
         <!--Legislators-->
         <scene sceneID="t0n-Vc-HAa">
             <objects>
                 <viewController id="GG6-UZ-jtO" customClass="ThirdViewController" customModule="Congress_Search" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uoR-zB-o0b"/>
-                        <viewControllerLayoutGuide type="bottom" id="W3X-Ee-1FL"/>
+                        <viewControllerLayoutGuide type="top" id="bpd-fC-OJk"/>
+                        <viewControllerLayoutGuide type="bottom" id="R6Y-aJ-qDX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mxQ-mj-aAZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -247,18 +268,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vgc-gb-jFJ" id="06S-ZD-c63">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kE5-zz-ZZ7">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xMb-Q8-BTW">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -267,7 +288,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="31T-iQ-fpU" kind="presentation" identifier="senateSeg" id="Qay-wG-E4M"/>
+                                            <segue destination="31T-iQ-fpU" kind="modal" identifier="senateSeg" id="Qay-wG-E4M"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -292,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o78-kG-1z3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222" y="1125"/>
+            <point key="canvasLocation" x="763.75" y="1250.625"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -312,15 +333,15 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="23"/>
+            <point key="canvasLocation" x="-32.5" y="25.568333333333332"/>
         </scene>
         <!--House Details View Controller-->
         <scene sceneID="JkA-Oy-5QP">
             <objects>
                 <viewController id="Cro-Kb-2gz" customClass="HouseDetailsViewController" customModule="Congress_Search" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FWH-XC-rmS"/>
-                        <viewControllerLayoutGuide type="bottom" id="zK2-dY-thq"/>
+                        <viewControllerLayoutGuide type="top" id="L1E-t5-H2k"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qis-tY-dU9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aVg-sW-faa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -335,7 +356,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I8A-xV-zdK" id="Gf6-p6-NQz">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -369,15 +390,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qjy-a6-j6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="430"/>
+            <point key="canvasLocation" x="1325.625" y="478.01666666666665"/>
         </scene>
         <!--Senate Details View Controller-->
         <scene sceneID="Qkn-pg-kJi">
             <objects>
                 <viewController id="31T-iQ-fpU" customClass="SenateDetailsViewController" customModule="Congress_Search" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WDL-hb-m7Q"/>
-                        <viewControllerLayoutGuide type="bottom" id="nls-dH-gcu"/>
+                        <viewControllerLayoutGuide type="top" id="nk5-8j-pLi"/>
+                        <viewControllerLayoutGuide type="bottom" id="aG4-pK-cf0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VKE-Q2-aHw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -392,7 +413,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aic-0c-g1o" id="CK3-Dj-JiO">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -426,7 +447,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYu-sF-aqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="1125"/>
+            <point key="canvasLocation" x="1325.625" y="1250.625"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>
