@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "LegTabBarController") as! LegTabBarController
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenu") as! LeftMenu
         let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController)
+        self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+        
         self.window?.rootViewController = slideMenuController
         self.window?.makeKeyAndVisible()
 

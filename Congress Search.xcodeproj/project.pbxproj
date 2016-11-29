@@ -18,6 +18,7 @@
 		848099721DED79AD001EBC43 /* String+stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099711DED79AD001EBC43 /* String+stuff.swift */; };
 		848099741DEE2426001EBC43 /* LegTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099731DEE2426001EBC43 /* LegTabBarController.swift */; };
 		848099761DEE279E001EBC43 /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099751DEE279E001EBC43 /* LeftMenu.swift */; };
+		848099781DEE361D001EBC43 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099771DEE361D001EBC43 /* MenuController.swift */; };
 		84C2211A1DE8E9DC000090C6 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C221191DE8E9DC000090C6 /* model.swift */; };
 		84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C01DE696D000D6C0E3 /* AppDelegate.swift */; };
 		84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C21DE696D000D6C0E3 /* FirstViewController.swift */; };
@@ -63,6 +64,7 @@
 		848099711DED79AD001EBC43 /* String+stuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+stuff.swift"; sourceTree = "<group>"; };
 		848099731DEE2426001EBC43 /* LegTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegTabBarController.swift; sourceTree = "<group>"; };
 		848099751DEE279E001EBC43 /* LeftMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
+		848099771DEE361D001EBC43 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		84C221191DE8E9DC000090C6 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		84F369BD1DE696D000D6C0E3 /* Congress Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Congress Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F369C01DE696D000D6C0E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				84752E071DECBB3500C388B8 /* StateDetailsViewController.swift */,
 				842E6FD21DED24D90075A3D3 /* HouseDetailsViewController.swift */,
 				842E6FD41DED24EA0075A3D3 /* SenateDetailsViewController.swift */,
+				848099771DEE361D001EBC43 /* MenuController.swift */,
 				84F369C61DE696D000D6C0E3 /* Main.storyboard */,
 				84F369C91DE696D000D6C0E3 /* Assets.xcassets */,
 				84F369CB1DE696D000D6C0E3 /* LaunchScreen.storyboard */,
@@ -487,6 +490,7 @@
 				842E6FD51DED24EA0075A3D3 /* SenateDetailsViewController.swift in Sources */,
 				84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */,
 				84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */,
+				848099781DEE361D001EBC43 /* MenuController.swift in Sources */,
 				842E6FD31DED24D90075A3D3 /* HouseDetailsViewController.swift in Sources */,
 				848099741DEE2426001EBC43 /* LegTabBarController.swift in Sources */,
 				84752E021DEA498100C388B8 /* ThirdViewController.swift in Sources */,
