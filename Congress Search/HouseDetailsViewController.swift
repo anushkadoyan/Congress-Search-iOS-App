@@ -73,7 +73,6 @@ class HouseDetailsViewController: UIViewController, UITableViewDelegate, UITable
                 self.legDetailsDetailsArray[self.legDetailsDetailsArray.index(of:thing)!] = "N.A."
             }
         }
-        print(self.legDetailsDetailsArray)
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,7 +108,6 @@ class HouseDetailsViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "houseDetail", for: indexPath)
-       print(self.legDetailsDetailsArray)
         if(self.legDetailsArray.indices.contains(indexPath.row)) {
             cell.textLabel?.text = self.legDetailsArray[indexPath.row]
             if(self.legDetailsArray[indexPath.row] == "Twitter" && legDetailsDetailsArray[indexPath.row] != "N.A.") {
