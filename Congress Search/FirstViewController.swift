@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var MenuButton: UIBarButtonItem!
     @IBOutlet weak var legTable: UITableView!
     var legs = [JSON]()
     let mod = model()
@@ -34,6 +35,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.mod.getLegs()
     }
     
+    
+    
+    @IBAction func MenuButtonClicked(_ sender: Any) {
+        self.slideMenuController()?.openLeft()
+
+    }
     func reloadData(_ notification: Notification) {
         legTable.reloadData()
     }
