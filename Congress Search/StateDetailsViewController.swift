@@ -53,16 +53,13 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
 
 //        print (self.leg)
         let state = self.states[(self.leg["state"].stringValue)]
-
+        let termEnd =  (convertDateFormater(date: self.leg["term_end"].stringValue))
+        let birthday =  (convertDateFormater(date: self.leg["birthday"].stringValue))
        let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
         self.detailImage.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
-        
-        var endTerm = (self.legDetailsDetailsArray)
-
         self.legDetailsArray = ["First Name","Last Name","State","Birth Date","Gender","Chamber","Fax No.","Twitter","Facebook","Website","Office No.","Term ends on"]
-        
         self.legDetailsDetailsArray=[self.leg["first_name"].stringValue as AnyObject,self.leg["last_name"].stringValue as AnyObject,state as AnyObject]
-        self.legDetailsDetailsArray.append(self.leg["birthday"].stringValue as AnyObject)
+        self.legDetailsDetailsArray.append(birthday as AnyObject)
         self.legDetailsDetailsArray.append(self.leg["gender"].stringValue as AnyObject)
         self.legDetailsDetailsArray.append(self.leg["chamber"].stringValue as AnyObject)
         self.legDetailsDetailsArray.append(self.leg["fax"].stringValue as AnyObject)
@@ -70,9 +67,9 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         self.legDetailsDetailsArray.append(self.leg["facebook_id"].stringValue as AnyObject)
         self.legDetailsDetailsArray.append(self.leg["website"].stringValue as AnyObject)
         self.legDetailsDetailsArray.append(self.leg["office"].stringValue as AnyObject)
-        self.legDetailsDetailsArray.append(self.leg["term_end"].stringValue as AnyObject)
-        print(convertDateFormater(date: self.leg["term_end"].stringValue))
+        self.legDetailsDetailsArray.append(termEnd as AnyObject)
         
+        print (self.legDetailsDetailsArray)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print (self.legDetailsArray.count)
