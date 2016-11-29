@@ -16,7 +16,7 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
     var leg = JSON("")
     var legDetails = JSON("")
     var legDetailsArray = ["String"]
-    var legDetailsDetailsArray = [AnyObject]()
+    var legDetailsDetailsArray = ["String"]
 
 //    @IBOutlet weak var legDetailsTable: UITableView!
     @IBOutlet weak var backButton: UIBarButtonItem!
@@ -49,30 +49,43 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
-        
+        print(self.leg)
 
 //        print (self.leg)
         let state = self.states[(self.leg["state"].stringValue)]
         let termEnd =  (convertDateFormater(date: self.leg["term_end"].stringValue))
         let birthday =  (convertDateFormater(date: self.leg["birthday"].stringValue))
+        if (self.leg["gender"].stringValue=="M") {
+            self.leg["gender"].stringValue = "Male"
+        } else {
+            self.leg["gender"].stringValue = "Female"
+        }
        let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
         self.detailImage.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
         self.legDetailsArray = ["First Name","Last Name","State","Birth Date","Gender","Chamber","Fax No.","Twitter","Facebook","Website","Office No.","Term ends on"]
-        self.legDetailsDetailsArray=[self.leg["first_name"].stringValue as AnyObject,self.leg["last_name"].stringValue as AnyObject,state as AnyObject]
-        self.legDetailsDetailsArray.append(birthday as AnyObject)
-        self.legDetailsDetailsArray.append(self.leg["gender"].stringValue as AnyObject)
-        self.legDetailsDetailsArray.append(self.leg["chamber"].stringValue as AnyObject)
-        self.legDetailsDetailsArray.append(self.leg["fax"].stringValue as AnyObject)
-        self.legDetailsDetailsArray.append(self.leg["twitter_id"].stringValue as AnyObject)
-        self.legDetailsDetailsArray.append(self.leg["facebook_id"].stringValue as AnyObject)
-        self.legDetailsDetailsArray.append(self.leg["website"].stringValue as AnyObject)
-        self.legDetailsDetailsArray.append(self.leg["office"].stringValue as AnyObject)
-        self.legDetailsDetailsArray.append(termEnd as AnyObject)
-        
-        print (self.legDetailsDetailsArray)
+        self.legDetailsDetailsArray=[self.leg["first_name"].stringValue ,self.leg["last_name"].stringValue ,state! ]
+        self.legDetailsDetailsArray.append(birthday )
+        self.legDetailsDetailsArray.append(self.leg["gender"].stringValue )
+        self.legDetailsDetailsArray.append(self.leg["chamber"].stringValue )
+        self.legDetailsDetailsArray.append(self.leg["fax"].stringValue )
+        self.legDetailsDetailsArray.append(self.leg["twitter_id"].stringValue )
+        self.legDetailsDetailsArray.append(self.leg["facebook_id"].stringValue )
+        self.legDetailsDetailsArray.append(self.leg["website"].stringValue )
+        self.legDetailsDetailsArray.append(self.leg["office"].stringValue )
+        self.legDetailsDetailsArray.append(termEnd )
+        for var thing in self.legDetailsDetailsArray {
+            print(thing.characters.count)
+            if (thing  == nil || thing.characters.count == 0)  {
+                
+                self.legDetailsDetailsArray[self.legDetailsDetailsArray.index(of:thing)!] = "N.A."
+//                print(key)
+//                self.legDetailsDetailsArray[key] = "N.A."
+            }
+            
+        }
+
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print (self.legDetailsArray.count)
         return self.legDetailsArray.count
     
     }
