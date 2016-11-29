@@ -109,7 +109,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         return cell
     }
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "stateSeg", sender: indexPath.row)
     }
         // pass any object as parameter, i.e. the tapped row

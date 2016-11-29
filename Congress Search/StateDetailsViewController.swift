@@ -50,7 +50,8 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
-        print(self.leg)
+        let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
+        self.detailImage.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
 
         let state = self.states[(self.leg["state"].stringValue)]
         let termEnd =  (convertDateFormater(date: self.leg["term_end"].stringValue))
@@ -63,8 +64,6 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         //UIApplication.shared.openURL(URL(string: "http://www.stackoverflow.com")!)
  
         self.leg["chamber"].stringValue.capitalizeFirstLetter()
-        let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
-        self.detailImage.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
         self.legDetailsArray = ["First Name","Last Name","State","Birth Date","Gender","Chamber","Fax No.","Twitter","Facebook","Website","Office No.","Term ends on"]
         self.legDetailsDetailsArray=[self.leg["first_name"].stringValue ,self.leg["last_name"].stringValue ,state! ]
         self.legDetailsDetailsArray.append(birthday )
@@ -87,13 +86,38 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         return self.legDetailsArray.count
     
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(legDetailsDetailsArray[indexPath.row] == "N.A.") {
+            return
+        }
+        if(indexPath.row==7) {
+            //twitter
+            let url = URL(string: "https://www.twitter.com/"+legDetailsDetailsArray[indexPath.row])
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+
+        }
+        else if(indexPath.row==8) {
+            //facebook
+            let url = URL(string: "https://www.facebook.com/"+legDetailsDetailsArray[indexPath.row])
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        }
+        else if(indexPath.row==9) {
+            //website
+            let url = URL(string: legDetailsDetailsArray[indexPath.row])
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        }
+//        if (indexPath)
+//        var url =
+//        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "stateDetail", for: indexPath)
         if(self.legDetailsArray.indices.contains(indexPath.row)) {
             cell.textLabel?.text = self.legDetailsArray[indexPath.row]
-            if(self.legDetailsArray[indexPath.row] == "Twitter") {
+            if(self.legDetailsArray[indexPath.row] == "Twitter" && legDetailsDetailsArray[indexPath.row] != "N.A.") {
                 // You must set the formatting of the link manually
                             let linkAttributes = [
                                 NSLinkAttributeName: NSURL(string: "https://www.twitter.com/"+legDetailsDetailsArray[indexPath.row])!,
@@ -106,9 +130,36 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
                             attributedString.setAttributes(linkAttributes, range: NSMakeRange(0, 7))
                 cell.detailTextLabel?.attributedText = attributedString
             }
+            else if(self.legDetailsArray[indexPath.row] == "Facebook" && legDetailsDetailsArray[indexPath.row] != "N.A.") {
+                // You must set the formatting of the link manually
+                let linkAttributes = [
+                    NSLinkAttributeName: NSURL(string: "https://www.facebook.com/"+legDetailsDetailsArray[indexPath.row])!,
+                    NSForegroundColorAttributeName: UIColor.blue
+                    ] as [String : Any]
+                
+                let attributedString = NSMutableAttributedString(string: "Facebook")
+                
+                // Set the 'click here' substring to be the link
+                attributedString.setAttributes(linkAttributes, range: NSMakeRange(0, 8))
+                cell.detailTextLabel?.attributedText = attributedString
+            }
+            else if(self.legDetailsArray[indexPath.row] == "Website" && legDetailsDetailsArray[indexPath.row] != "N.A.") {
+                // You must set the formatting of the link manually
+                let linkAttributes = [
+                    NSLinkAttributeName: NSURL(string: legDetailsDetailsArray[indexPath.row])!,
+                    NSForegroundColorAttributeName: UIColor.blue
+                    ] as [String : Any]
+                
+                let attributedString = NSMutableAttributedString(string: "Website")
+                
+                // Set the 'click here' substring to be the link
+                attributedString.setAttributes(linkAttributes, range: NSMakeRange(0, 7))
+                cell.detailTextLabel?.attributedText = attributedString
+            }
+
 
             else {
-                cell.detailTextLabel?.text = legDetailsDetailsArray[indexPath.row] as! String
+                cell.detailTextLabel?.text =   legDetailsDetailsArray[indexPath.row] as! String
             }
         
         }
