@@ -550,6 +550,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="Star-50" id="HRq-Xd-Opy">
                                             <inset key="imageInsets" minX="15" minY="10" maxX="0.0" maxY="10"/>
+                                            <connections>
+                                                <action selector="favClicked:" destination="5c9-Qf-JC5" id="xo4-dn-iIt"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -567,6 +570,7 @@
                     <connections>
                         <outlet property="commTable" destination="u12-ui-vhY" id="eQl-vs-8fE"/>
                         <outlet property="commView" destination="snC-Ji-nN9" id="RIR-Pc-czx"/>
+                        <outlet property="fav" destination="HRq-Xd-Opy" id="nVl-XI-sdl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhB-DO-mvn" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class CommDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    @IBOutlet var fav: UIBarButtonItem!
     var comm = JSON("")
     var commDetailsArray = ["String"]
     var commDetailsDetailsArray = ["String"]
@@ -26,6 +27,23 @@ class CommDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 
     }
     
+    
+    @IBAction func favClicked(_ sender: Any) {
+        if(favorites["comms"]?.contains(self.comm))! {
+            favorites["comms"]?.remove(at: (favorites["comms"]?.index(of: self.comm))!)
+        }
+        else {
+            favorites["comms"]?.append(self.comm)
+        }
+        if (self.fav.image == UIImage(named: "Star-50.png")) {
+            self.fav.image = UIImage(named: "Star Filled-50.png")
+        } else {
+            self.fav.image = UIImage(named: "Star-50.png")
+        }
+
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.commView.text = self.comm["name"].stringValue
@@ -38,6 +56,15 @@ class CommDetailsViewController: UIViewController, UITableViewDelegate, UITableV
                 self.commDetailsDetailsArray[self.commDetailsDetailsArray.index(of:thing)!] = "N.A."
             }
         }
+        if(favorites["comms"]?.contains(self.comm))! {
+            print("contains")
+            self.fav.image = UIImage(named: "Star Filled-50.png")
+        }
+        else {
+            self.fav.image = UIImage(named: "Star-50.png")
+        }
+        
+
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.commDetailsDetailsArray.count
