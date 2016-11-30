@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdE-V3-Nzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1407" y="207"/>
+            <point key="canvasLocation" x="1496" y="1251"/>
         </scene>
         <!--Legislators-->
         <scene sceneID="wg7-f3-ORb">
@@ -575,7 +575,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhB-DO-mvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1452" y="4519"/>
+            <point key="canvasLocation" x="1496" y="3662"/>
         </scene>
         <!--Comm Tab Bar Controller-->
         <scene sceneID="zku-qQ-hdv">
@@ -856,7 +856,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2l-fO-v5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325.5" y="2121.5"/>
+            <point key="canvasLocation" x="1496" y="2348"/>
         </scene>
         <!--Bill Tab Bar Controller-->
         <scene sceneID="DgP-Iq-JfZ">
@@ -1006,7 +1006,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmd-D6-ZLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998.5" y="1005.5"/>
+            <point key="canvasLocation" x="3102" y="207"/>
+        </scene>
+        <!--Legislators-->
+        <scene sceneID="BiJ-ek-ulK">
+            <objects>
+                <viewController id="8xh-Z0-W6l" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aJz-D8-nve"/>
+                        <viewControllerLayoutGuide type="bottom" id="NIC-YR-6qV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mzZ-xk-cJj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Legislators" id="VZe-aD-L74">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEf-uc-Ddw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2932" y="1479"/>
+        </scene>
+        <!--Bills-->
+        <scene sceneID="T9g-xX-aLb">
+            <objects>
+                <viewController id="7V8-JW-f1b" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dxo-np-UVK"/>
+                        <viewControllerLayoutGuide type="bottom" id="32h-ec-jO4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G8P-WD-hU1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bills" id="IqT-92-Daq">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nag-0Z-hwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2932" y="2348"/>
+        </scene>
+        <!--Fav Tab Bar Controller-->
+        <scene sceneID="YZV-9b-dnn">
+            <objects>
+                <tabBarController storyboardIdentifier="FavTabBarController" id="jix-Ao-YiP" customClass="FavTabBarController" customModule="Congress_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="a42-0w-8Qx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8xh-Z0-W6l" kind="relationship" relationship="viewControllers" id="1BD-mO-eYy"/>
+                        <segue destination="7V8-JW-f1b" kind="relationship" relationship="viewControllers" id="FCf-FU-206"/>
+                        <segue destination="MeE-IS-VyS" kind="relationship" relationship="viewControllers" id="DHr-7L-pSK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VvD-Mv-Cwl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3972" y="2348"/>
+        </scene>
+        <!--Committee-->
+        <scene sceneID="j9g-4D-nav">
+            <objects>
+                <viewController id="MeE-IS-VyS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xus-Hp-0US"/>
+                        <viewControllerLayoutGuide type="bottom" id="AL0-8p-Ppv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Fw-yv-sP9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Committee" id="alP-gW-0mh">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gq2-Ce-Q4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2932" y="3180"/>
         </scene>
         <!--Left Menu-->
         <scene sceneID="Vzr-tS-tGx">

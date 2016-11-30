@@ -16,6 +16,7 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var aboutController: UIViewController!
     var billTabBarController: UIViewController!
     var commTabBarController: UIViewController!
+    var favTabBarController: UIViewController!
 
 
 //    var javaViewController: UIViewController!
@@ -40,7 +41,8 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.billTabBarController = billTabBarController
         let commTabBarController = storyboard.instantiateViewController(withIdentifier: "CommTabBarController") as! CommTabBarController
         self.commTabBarController = commTabBarController
-
+        let favTabBarController = storyboard.instantiateViewController(withIdentifier: "FavTabBarController") as! FavTabBarController
+        self.favTabBarController = favTabBarController
 
 
     }
@@ -57,9 +59,9 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         else if(thing==2) {
             self.slideMenuController()?.changeMainViewController(self.commTabBarController  , close: true)
         }
-//        case "favs":
-//            self.slideMenuController()?.changeMainViewController(self.goViewController, close: true)
-        //about
+        else if(thing==3) {
+            self.slideMenuController()?.changeMainViewController(self.favTabBarController  , close: true)
+        }
         if(thing == 4) {
             self.slideMenuController()?.changeMainViewController(self.aboutController, close: true)
         }

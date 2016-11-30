@@ -30,6 +30,7 @@
 		8480999B1DEEBCF1001EBC43 /* JointCommController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480999A1DEEBCF1001EBC43 /* JointCommController.swift */; };
 		8480999F1DEEC2C0001EBC43 /* CommTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480999E1DEEC2C0001EBC43 /* CommTabBarController.swift */; };
 		848099A11DEED1BB001EBC43 /* CommDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099A01DEED1BB001EBC43 /* CommDetailsController.swift */; };
+		848099A41DEF0767001EBC43 /* FavTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099A31DEF0767001EBC43 /* FavTabBarController.swift */; };
 		84C2211A1DE8E9DC000090C6 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C221191DE8E9DC000090C6 /* model.swift */; };
 		84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C01DE696D000D6C0E3 /* AppDelegate.swift */; };
 		84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C21DE696D000D6C0E3 /* FirstViewController.swift */; };
@@ -86,6 +87,7 @@
 		8480999A1DEEBCF1001EBC43 /* JointCommController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JointCommController.swift; sourceTree = "<group>"; };
 		8480999E1DEEC2C0001EBC43 /* CommTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommTabBarController.swift; sourceTree = "<group>"; };
 		848099A01DEED1BB001EBC43 /* CommDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommDetailsController.swift; sourceTree = "<group>"; };
+		848099A31DEF0767001EBC43 /* FavTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavTabBarController.swift; sourceTree = "<group>"; };
 		84C221191DE8E9DC000090C6 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		84F369BD1DE696D000D6C0E3 /* Congress Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Congress Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F369C01DE696D000D6C0E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				848099841DEE91CE001EBC43 /* Extensions */,
 				848099911DEEA102001EBC43 /* Other */,
 				84F369C91DE696D000D6C0E3 /* Assets.xcassets */,
+				848099A31DEF0767001EBC43 /* FavTabBarController.swift */,
 			);
 			path = "Congress Search";
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				848099931DEEA2D7001EBC43 /* ActiveDetailsViewController.swift in Sources */,
 				8480997D1DEE6982001EBC43 /* AboutController.swift in Sources */,
 				84752E021DEA498100C388B8 /* ThirdViewController.swift in Sources */,
+				848099A41DEF0767001EBC43 /* FavTabBarController.swift in Sources */,
 				84752E061DEBE44600C388B8 /* UIImageView+stuff.swift in Sources */,
 				84C2211A1DE8E9DC000090C6 /* model.swift in Sources */,
 			);
