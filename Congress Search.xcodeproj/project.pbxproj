@@ -230,6 +230,18 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		848099A21DEEDAE8001EBC43 /* Committees */ = {
+			isa = PBXGroup;
+			children = (
+				848099961DEEBCDA001EBC43 /* HouseCommController.swift */,
+				848099981DEEBCE6001EBC43 /* SenateCommController.swift */,
+				8480999A1DEEBCF1001EBC43 /* JointCommController.swift */,
+				8480999E1DEEC2C0001EBC43 /* CommTabBarController.swift */,
+				848099A01DEED1BB001EBC43 /* CommDetailsController.swift */,
+			);
+			name = Committees;
+			sourceTree = "<group>";
+		};
 		84F369B41DE696D000D6C0E3 = {
 			isa = PBXGroup;
 			children = (
@@ -255,18 +267,14 @@
 		84F369BF1DE696D000D6C0E3 /* Congress Search */ = {
 			isa = PBXGroup;
 			children = (
-				848099911DEEA102001EBC43 /* Other */,
 				848099821DEE9152001EBC43 /* Legislators */,
 				8480998F1DEEA0B6001EBC43 /* Bills */,
+				848099A21DEEDAE8001EBC43 /* Committees */,
 				848099901DEEA0E6001EBC43 /* Menu */,
 				848099831DEE91BB001EBC43 /* Storyboards */,
 				848099841DEE91CE001EBC43 /* Extensions */,
+				848099911DEEA102001EBC43 /* Other */,
 				84F369C91DE696D000D6C0E3 /* Assets.xcassets */,
-				848099961DEEBCDA001EBC43 /* HouseCommController.swift */,
-				848099981DEEBCE6001EBC43 /* SenateCommController.swift */,
-				8480999A1DEEBCF1001EBC43 /* JointCommController.swift */,
-				8480999E1DEEC2C0001EBC43 /* CommTabBarController.swift */,
-				848099A01DEED1BB001EBC43 /* CommDetailsController.swift */,
 			);
 			path = "Congress Search";
 			sourceTree = "<group>";

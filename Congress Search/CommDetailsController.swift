@@ -27,7 +27,6 @@ class CommDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(self.comm)
         super.viewWillAppear(animated)
         self.commView.text = self.comm["name"].stringValue
         self.comm["chamber"].stringValue.capitalizeFirstLetter()

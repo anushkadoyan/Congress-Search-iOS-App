@@ -9,6 +9,7 @@ target 'Congress Search' do
   pod 'Alamofire', '~> 4.0'
   pod 'SwiftyJSON', '3.0.0'
   pod 'SlideMenuControllerSwift'
+  pod 'SwiftSpinner'
   target 'Congress SearchTests' do
     inherit! :search_paths
     # Pods for testing
