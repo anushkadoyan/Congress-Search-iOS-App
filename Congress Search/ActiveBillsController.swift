@@ -22,8 +22,23 @@ class ActiveBillsController: UIViewController, UITableViewDelegate, UITableViewD
     }
     func reloadTableData(_ notification: Notification) {
         bills = self.mod.activeBills
-        print(bills)
         billsTable.reloadData()
+    }
+    func convertDateFormater(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        
+        guard let date = dateFormatter.date(from: date) else {
+            assert(false, "no date from string")
+            return ""
+        }
+        
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        let timeStamp = dateFormatter.string(from: date)
+        
+        return timeStamp
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bills.count
@@ -38,7 +53,7 @@ class ActiveBillsController: UIViewController, UITableViewDelegate, UITableViewD
         //official_title
         cell.secondLabel.text = bills[indexPath.row]["official_title"].stringValue
         //introduced_on
-        cell.thirdLabel.text = bills[indexPath.row]["introduced_on"].stringValue
+            cell.thirdLabel.text = convertDateFormater(date:bills[indexPath.row]["introduced_on"].stringValue)
         
         }
         return cell

@@ -184,6 +184,38 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		8480998F1DEEA0B6001EBC43 /* Bills */ = {
+			isa = PBXGroup;
+			children = (
+				8480997E1DEE72C7001EBC43 /* BillTabBarController.swift */,
+				848099851DEE91F1001EBC43 /* ActiveBillsController.swift */,
+				848099871DEE91FE001EBC43 /* NewBillsController.swift */,
+				848099891DEE9605001EBC43 /* MyCustomTableViewCell.swift */,
+				8480998D1DEE9F3D001EBC43 /* MyCustomNewTableViewCell.swift */,
+			);
+			name = Bills;
+			sourceTree = "<group>";
+		};
+		848099901DEEA0E6001EBC43 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				848099771DEE361D001EBC43 /* MenuController.swift */,
+				848099751DEE279E001EBC43 /* LeftMenu.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		848099911DEEA102001EBC43 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				84F369C01DE696D000D6C0E3 /* AppDelegate.swift */,
+				84C221191DE8E9DC000090C6 /* model.swift */,
+				8480997C1DEE6982001EBC43 /* AboutController.swift */,
+				84F369CE1DE696D000D6C0E3 /* Info.plist */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		84F369B41DE696D000D6C0E3 = {
 			isa = PBXGroup;
 			children = (
@@ -209,22 +241,14 @@
 		84F369BF1DE696D000D6C0E3 /* Congress Search */ = {
 			isa = PBXGroup;
 			children = (
-				84F369C01DE696D000D6C0E3 /* AppDelegate.swift */,
-				84C221191DE8E9DC000090C6 /* model.swift */,
+				848099911DEEA102001EBC43 /* Other */,
 				848099821DEE9152001EBC43 /* Legislators */,
-				8480997C1DEE6982001EBC43 /* AboutController.swift */,
-				848099771DEE361D001EBC43 /* MenuController.swift */,
-				848099751DEE279E001EBC43 /* LeftMenu.swift */,
+				8480998F1DEEA0B6001EBC43 /* Bills */,
+				848099901DEEA0E6001EBC43 /* Menu */,
 				848099831DEE91BB001EBC43 /* Storyboards */,
-				84F369CE1DE696D000D6C0E3 /* Info.plist */,
-				8480997E1DEE72C7001EBC43 /* BillTabBarController.swift */,
 				848099801DEE7516001EBC43 /* CommTabBarController.swift */,
 				848099841DEE91CE001EBC43 /* Extensions */,
 				84F369C91DE696D000D6C0E3 /* Assets.xcassets */,
-				848099851DEE91F1001EBC43 /* ActiveBillsController.swift */,
-				848099871DEE91FE001EBC43 /* NewBillsController.swift */,
-				848099891DEE9605001EBC43 /* MyCustomTableViewCell.swift */,
-				8480998D1DEE9F3D001EBC43 /* MyCustomNewTableViewCell.swift */,
 			);
 			path = "Congress Search";
 			sourceTree = "<group>";
