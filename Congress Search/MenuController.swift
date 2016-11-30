@@ -14,6 +14,10 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var menus = ["Legislators", "Bills", "Committee", "Favorite", "About"]
     var mainViewController: UIViewController!
     var aboutController: UIViewController!
+    var billTabBarController: UIViewController!
+    var commTabBarController: UIViewController!
+
+
 //    var javaViewController: UIViewController!
 //    var goViewController: UIViewController!
 //    var nonMenuViewController: UIViewController!
@@ -27,8 +31,16 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         self.menuTable.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "LegTabBarController") as! LegTabBarController
+        self.mainViewController = mainViewController
+
         let aboutController = storyboard.instantiateViewController(withIdentifier: "AboutController") as! AboutController
-        self.aboutController = UINavigationController(rootViewController: aboutController)
+        self.aboutController = aboutController
+        let billTabBarController = storyboard.instantiateViewController(withIdentifier: "BillTabBarController") as! BillTabBarController
+        self.billTabBarController = billTabBarController
+        let commTabBarController = storyboard.instantiateViewController(withIdentifier: "CommTabBarController") as! CommTabBarController
+        self.commTabBarController = commTabBarController
+
 
 
     }
@@ -38,10 +50,13 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if (thing == 0) {
             self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
         }
-//        case "bills":
-//            self.slideMenuController()?.changeMainViewController(self.swiftViewController, close: true)
-//        case "comms":
-//            self.slideMenuController()?.changeMainViewController(self.javaViewController, close: true)
+        else if(thing==1) {
+            self.slideMenuController()?.changeMainViewController(self.billTabBarController, close: true)
+        }
+        //            self.slideMenuController()?.changeMainViewController(self.swiftViewController, close: true)
+        else if(thing==2) {
+            self.slideMenuController()?.changeMainViewController(self.commTabBarController  , close: true)
+        }
 //        case "favs":
 //            self.slideMenuController()?.changeMainViewController(self.goViewController, close: true)
         //about

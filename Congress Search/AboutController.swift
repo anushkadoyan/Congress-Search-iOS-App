@@ -11,9 +11,13 @@ import UIKit
 class AboutController: UIViewController {
     @IBOutlet var pic: UIImageView!
     
+    @IBOutlet var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         pic.image = UIImage(named: "idpic.jpeg")
     }
     
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        self.slideMenuController()?.openLeft()
+    }
 }
