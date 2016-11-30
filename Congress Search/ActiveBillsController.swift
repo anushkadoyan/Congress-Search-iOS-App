@@ -30,7 +30,7 @@ class ActiveBillsController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MyCustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "activeBillsCustomCell", for: indexPath) as! MyCustomTableViewCell
 
         if(bills.indices.contains(indexPath.row)) {
         //bill_id
