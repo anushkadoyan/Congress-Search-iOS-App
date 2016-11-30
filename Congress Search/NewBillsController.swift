@@ -67,8 +67,8 @@ class NewBillsController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "newSeg",
-            let nextScene = segue.destination as? NewDetailsViewController ,
+        if segue.identifier == "activeSeg",
+            let nextScene = segue.destination as? ActiveDetailsViewController ,
             let indexPath = self.billsTable.indexPathForSelectedRow {
             let selectedBill = bills[indexPath.row]
             nextScene.bill = selectedBill

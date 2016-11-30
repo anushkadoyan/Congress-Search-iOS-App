@@ -16,12 +16,30 @@ class ActiveDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     var billDetailsArray = ["String"]
     var billDetailsDetailsArray = ["String"]
 
+    @IBOutlet var fav: UIBarButtonItem!
     @IBOutlet var backButton: UIBarButtonItem!
     
     @IBOutlet var billView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    @IBAction func favClicked(_ sender: Any) {
+        if(favorites["bills"]?.contains(self.bill))! {
+            favorites["bills"]?.remove(at: (favorites["bills"]?.index(of: self.bill))!)
+        }
+        else {
+            favorites["bills"]?.append(self.bill)
+        }
+        if (self.fav.image == UIImage(named: "Star-50.png")) {
+            self.fav.image = UIImage(named: "Star Filled-50.png")
+        } else {
+            self.fav.image = UIImage(named: "Star-50.png")
+        }
+
+    }
+    
     func convertDateFormater(date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -66,7 +84,13 @@ class ActiveDetailsViewController: UIViewController, UITableViewDelegate, UITabl
                 self.billDetailsDetailsArray[self.billDetailsDetailsArray.index(of:thing)!] = "N.A."
             }
         }
-
+        if(favorites["bills"]?.contains(self.bill))! {
+            print("contains")
+            self.fav.image = UIImage(named: "Star Filled-50.png")
+        }
+        else {
+            self.fav.image = UIImage(named: "Star-50.png")
+        }
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

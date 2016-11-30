@@ -66,8 +66,7 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-print("asdf")
-        print(favorites["legs"])
+
         super.viewWillAppear(animated)
         let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
         self.detailImage.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
