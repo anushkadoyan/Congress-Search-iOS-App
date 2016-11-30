@@ -1,5 +1,5 @@
 //
-//  LeftMenu.swift
+//  About.swift
 //  Congress Search
 //
 //  Created by Anush on 11/29/16.
@@ -8,9 +8,12 @@
 
 import Foundation
 import UIKit
-
-class LeftMenu: UIViewController {
+class AboutController: UIViewController {
+    @IBOutlet var pic: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        pic.image = UIImage(named: "idpic.jpeg")
     }
+    
 }

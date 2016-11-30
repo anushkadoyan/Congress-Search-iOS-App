@@ -12,7 +12,11 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var menuTable: UITableView!
     @IBOutlet var menuImage: UIImageView!
     var menus = ["Legislators", "Bills", "Committee", "Favorite", "About"]
-
+    var mainViewController: UIViewController!
+    var aboutController: UIViewController!
+//    var javaViewController: UIViewController!
+//    var goViewController: UIViewController!
+//    var nonMenuViewController: UIViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.modalPresentationStyle = UIModalPresentationCurrentContext;
@@ -20,8 +24,36 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         menuImage.image = UIImage(named:"logo.png")
 //        menuImage.image?.scale = CGSize(width: 200, height: 160)
 //        menuImage.frame = CGRect(x: 0, y: 0, width: 200, height: 160)
-        self.menuTable.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
+        self.menuTable.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
+        let aboutController = storyboard.instantiateViewController(withIdentifier: "AboutController") as! AboutController
+        self.aboutController = UINavigationController(rootViewController: aboutController)
+
+
+    }
+    
+    
+    func changeViewController(_ thing: Int) {
+        if (thing == 0) {
+            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+        }
+//        case "bills":
+//            self.slideMenuController()?.changeMainViewController(self.swiftViewController, close: true)
+//        case "comms":
+//            self.slideMenuController()?.changeMainViewController(self.javaViewController, close: true)
+//        case "favs":
+//            self.slideMenuController()?.changeMainViewController(self.goViewController, close: true)
+        //about
+        if(thing == 4) {
+            self.slideMenuController()?.changeMainViewController(self.aboutController, close: true)
+        }
+       
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let menu = LeftMenu(rawValue: indexPath.row) {
+            self.changeViewController(indexPath.row)
+//        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menus.count
