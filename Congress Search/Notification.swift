@@ -16,6 +16,8 @@ extension Notification.Name {
     static let reloadSenateComms = Notification.Name("reloadSenateComms")
     static let reloadJointComms = Notification.Name("reloadJointComms")
     static let reloadLegFav = Notification.Name("reloadLegFav")
+    static let reloadBillFav = Notification.Name("reloadBillFav")
+    static let reloadCommFav = Notification.Name("reloadCommFav")
 
 
 

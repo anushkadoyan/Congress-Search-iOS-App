@@ -37,6 +37,8 @@ class ActiveDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         } else {
             self.fav.image = UIImage(named: "Star-50.png")
         }
+        NotificationCenter.default.post(name: .reloadBillFav, object: nil)
+
 
     }
     
@@ -61,7 +63,8 @@ class ActiveDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         
         super.viewWillAppear(animated)
         self.billView.text = self.bill["official_title"].stringValue
-        self.bill["chamber"].stringValue.capitalizeFirstLetter()
+        var chamber = self.bill["chamber"].stringValue
+        chamber.capitalizeFirstLetter()
         let lastAction = (convertDateFormater(date: bill["last_version"]["issued_on"].stringValue))
         let billType = self.bill["bill_type"].stringValue.uppercased()
         var sponsor = self.bill["sponsor"]["title"].stringValue
@@ -77,8 +80,8 @@ class ActiveDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         else {
              status = "New"
         }
-        self.billDetailsArray = ["Bill ID","Bill Type", "Sponsor","Last Action","PDF","Chamber","Last Vote", "Status"]
-        self.billDetailsDetailsArray=[self.bill["bill_id"].stringValue ,billType, sponsor, lastAction,pdf, self.bill["chamber"].stringValue,self.bill["chamber"].stringValue, status]
+        self.billDetailsArray = ["Bill ID","Bill Type", "Sponsor","Last Action","PDF","Chamber","Status"]
+        self.billDetailsDetailsArray=[self.bill["bill_id"].stringValue ,billType, sponsor, lastAction,pdf,self.bill["chamber"].stringValue, status]
         for var thing in self.billDetailsDetailsArray {
             if (thing  == nil || thing.characters.count == 0)  {
                 self.billDetailsDetailsArray[self.billDetailsDetailsArray.index(of:thing)!] = "N.A."
