@@ -8,6 +8,8 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import SwiftyJSON
+var favorites = [String: [JSON]]()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appearance = UITabBarItem.appearance()
         let attributes = [NSFontAttributeName:UIFont(name: "Arial", size: 20)]
         appearance.setTitleTextAttributes(attributes, for: .normal)
+        
+        favorites["legs"] = [JSON]()
+        favorites["bills"] = [JSON]()
+        favorites["comms"] = [JSON]()
+
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "LegTabBarController") as! LegTabBarController

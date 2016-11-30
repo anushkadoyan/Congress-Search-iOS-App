@@ -13,6 +13,9 @@ import SwiftyJSON
 class StateDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet weak var detailImage: UIImageView!
+    
+    @IBOutlet var fav: UIBarButtonItem!
+    
     var leg = JSON("")
     var legDetails = JSON("")
     var legDetailsArray = ["String"]
@@ -29,6 +32,8 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
     }
     func convertDateFormater(date: String) -> String {
         let dateFormatter = DateFormatter()
@@ -47,8 +52,22 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         return timeStamp
     }
     
+    @IBAction func favClicked(_ sender: Any) {
+        if(favorites["legs"]?.contains(self.leg))! {
+            favorites["legs"]?.remove(at: (favorites["legs"]?.index(of: self.leg))!)
+        }
+        else {
+            favorites["legs"]?.append(self.leg)
+        }
+        if (self.fav.image == UIImage(named: "Star-50.png")) {
+            self.fav.image = UIImage(named: "Star Filled-50.png")
+        } else {
+            self.fav.image = UIImage(named: "Star-50.png")
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
-
+print("asdf")
+        print(favorites["legs"])
         super.viewWillAppear(animated)
         let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
         self.detailImage.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
@@ -79,6 +98,13 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
             if (thing  == nil || thing.characters.count == 0)  {
                 self.legDetailsDetailsArray[self.legDetailsDetailsArray.index(of:thing)!] = "N.A."
             }
+        }
+        if(favorites["legs"]?.contains(self.leg))! {
+            print("contains")
+            self.fav.image = UIImage(named: "Star Filled-50.png")
+        }
+        else {
+            self.fav.image = UIImage(named: "Star-50.png")
         }
 
     }

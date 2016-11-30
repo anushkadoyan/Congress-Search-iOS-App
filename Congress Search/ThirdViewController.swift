@@ -69,8 +69,8 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
               return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "senateSeg",
-            let nextScene = segue.destination as? SenateDetailsViewController ,
+        if segue.identifier == "stateSeg",
+            let nextScene = segue.destination as? StateDetailsViewController ,
             let indexPath = self.legTable.indexPathForSelectedRow {
             let selectedLeg = legs[indexPath.row]
             nextScene.leg = selectedLeg

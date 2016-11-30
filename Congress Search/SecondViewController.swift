@@ -70,8 +70,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "houseSeg",
-            let nextScene = segue.destination as? HouseDetailsViewController ,
+        if segue.identifier == "stateSeg",
+            let nextScene = segue.destination as? StateDetailsViewController ,
             let indexPath = self.legTable.indexPathForSelectedRow {
             let selectedLeg = legs[indexPath.row]
             nextScene.leg = selectedLeg
