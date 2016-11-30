@@ -42,12 +42,15 @@ class ActiveDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        print(self.bill)
         self.billView.text = self.bill["official_title"].stringValue
         self.bill["chamber"].stringValue.capitalizeFirstLetter()
         let lastAction = (convertDateFormater(date: bill["last_version"]["issued_on"].stringValue))
         let billType = self.bill["bill_type"].stringValue.uppercased()
-        let sponsor = self.bill["title"].stringValue + self.bill["first_name"].stringValue + self.bill["last_name"].stringValue
+        var sponsor = self.bill["sponsor"]["title"].stringValue
+        sponsor = sponsor + " "
+        sponsor = sponsor + self.bill["sponsor"]["first_name"].stringValue
+        sponsor = sponsor + " "
+        sponsor = sponsor + self.bill["sponsor"]["last_name"].stringValue
         let pdf = self.bill["last_version"]["urls"]["pdf"].stringValue
         var status = ""
         if(self.bill["history"]["active"].stringValue == "true") {
@@ -92,7 +95,7 @@ class ActiveDetailsViewController: UIViewController, UITableViewDelegate, UITabl
                 let attributedString = NSMutableAttributedString(string: "PDF Link")
                 
                 // Set the 'click here' substring to be the link
-                attributedString.setAttributes(linkAttributes, range: NSMakeRange(0, 7))
+                attributedString.setAttributes(linkAttributes, range: NSMakeRange(0, 8))
                 cell.detailTextLabel?.attributedText = attributedString
 
             }
