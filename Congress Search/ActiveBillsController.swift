@@ -60,8 +60,8 @@ class ActiveBillsController: UIViewController, UITableViewDelegate, UITableViewD
 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "houseSeg",
-            let nextScene = segue.destination as? HouseDetailsViewController ,
+        if segue.identifier == "activeSeg",
+            let nextScene = segue.destination as? ActiveDetailsViewController ,
             let indexPath = self.billsTable.indexPathForSelectedRow {
             let selectedBill = bills[indexPath.row]
             nextScene.bill = selectedBill

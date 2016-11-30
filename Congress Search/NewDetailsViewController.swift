@@ -8,9 +8,17 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 class NewDetailsViewController:UIViewController {
+    @IBOutlet var billView: UITextView!
+    var bill = JSON("")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+
     }
 }

@@ -152,7 +152,7 @@ class HouseDetailsViewController: UIViewController, UITableViewDelegate, UITable
                 
                 
             else {
-                cell.detailTextLabel?.text =   legDetailsDetailsArray[indexPath.row] as! String
+                cell.detailTextLabel?.text =   legDetailsDetailsArray[indexPath.row]
             }
             
         }
