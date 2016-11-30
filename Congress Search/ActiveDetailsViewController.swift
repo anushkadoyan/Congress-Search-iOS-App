@@ -88,7 +88,6 @@ class ActiveDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             }
         }
         if(favorites["bills"]?.contains(self.bill))! {
-            print("contains")
             self.fav.image = UIImage(named: "Star Filled-50.png")
         }
         else {

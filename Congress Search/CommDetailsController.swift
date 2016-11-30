@@ -40,6 +40,7 @@ class CommDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             self.fav.image = UIImage(named: "Star-50.png")
         }
+        NotificationCenter.default.post(name: .reloadCommFav, object: nil)
 
     }
     

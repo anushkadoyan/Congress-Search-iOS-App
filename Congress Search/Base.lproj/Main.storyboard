@@ -541,7 +541,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="mQb-LB-p2k">
+                                    <navigationItem title="Committee Detail" id="mQb-LB-p2k">
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="Qtx-B3-60u">
                                             <inset key="imageInsets" minX="0.0" minY="20" maxX="30" maxY="20"/>
                                             <connections>
@@ -1179,7 +1179,7 @@
         <!--Committee-->
         <scene sceneID="j9g-4D-nav">
             <objects>
-                <viewController id="MeE-IS-VyS" sceneMemberID="viewController">
+                <viewController id="MeE-IS-VyS" customClass="CommFavController" customModule="Congress_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xus-Hp-0US"/>
                         <viewControllerLayoutGuide type="bottom" id="AL0-8p-Ppv"/>
@@ -1195,6 +1195,9 @@
                                     <navigationItem title="Favorite" id="Nu1-1O-a6U">
                                         <barButtonItem key="leftBarButtonItem" image="Menu-64" style="plain" id="5kQ-dc-3c3">
                                             <inset key="imageInsets" minX="0.0" minY="20" maxX="30" maxY="20"/>
+                                            <connections>
+                                                <action selector="menuClicked:" destination="MeE-IS-VyS" id="N0G-JT-3dz"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1216,6 +1219,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MeE-IS-VyS" id="leb-U5-hBt"/>
+                                    <outlet property="delegate" destination="MeE-IS-VyS" id="EXQ-M5-QP7"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1223,6 +1230,9 @@
                     <tabBarItem key="tabBarItem" title="Committee" id="alP-gW-0mh">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="legTable" destination="gC5-Be-Fwg" id="lVU-lv-5XC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gq2-Ce-Q4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
