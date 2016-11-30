@@ -89,7 +89,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return lettersInString
     }
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.contacts[letters[section]]!.count
     }
     

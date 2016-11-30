@@ -64,6 +64,8 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
         } else {
             self.fav.image = UIImage(named: "Star-50.png")
         }
+        NotificationCenter.default.post(name: .reloadLegFav, object: nil)
+
     }
     override func viewWillAppear(_ animated: Bool) {
 
