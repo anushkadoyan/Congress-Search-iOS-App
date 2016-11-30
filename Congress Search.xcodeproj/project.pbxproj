@@ -27,6 +27,8 @@
 		848099881DEE91FE001EBC43 /* NewBillsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099871DEE91FE001EBC43 /* NewBillsController.swift */; };
 		8480998A1DEE9605001EBC43 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099891DEE9605001EBC43 /* MyCustomTableViewCell.swift */; };
 		8480998E1DEE9F3D001EBC43 /* MyCustomNewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480998D1DEE9F3D001EBC43 /* MyCustomNewTableViewCell.swift */; };
+		848099931DEEA2D7001EBC43 /* ActiveDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099921DEEA2D7001EBC43 /* ActiveDetailsViewController.swift */; };
+		848099951DEEA2F7001EBC43 /* NewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099941DEEA2F7001EBC43 /* NewDetailsViewController.swift */; };
 		84C2211A1DE8E9DC000090C6 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C221191DE8E9DC000090C6 /* model.swift */; };
 		84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C01DE696D000D6C0E3 /* AppDelegate.swift */; };
 		84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C21DE696D000D6C0E3 /* FirstViewController.swift */; };
@@ -80,6 +82,8 @@
 		848099871DEE91FE001EBC43 /* NewBillsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBillsController.swift; sourceTree = "<group>"; };
 		848099891DEE9605001EBC43 /* MyCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCell.swift; sourceTree = "<group>"; };
 		8480998D1DEE9F3D001EBC43 /* MyCustomNewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomNewTableViewCell.swift; sourceTree = "<group>"; };
+		848099921DEEA2D7001EBC43 /* ActiveDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDetailsViewController.swift; sourceTree = "<group>"; };
+		848099941DEEA2F7001EBC43 /* NewDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDetailsViewController.swift; sourceTree = "<group>"; };
 		84C221191DE8E9DC000090C6 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		84F369BD1DE696D000D6C0E3 /* Congress Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Congress Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F369C01DE696D000D6C0E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				848099871DEE91FE001EBC43 /* NewBillsController.swift */,
 				848099891DEE9605001EBC43 /* MyCustomTableViewCell.swift */,
 				8480998D1DEE9F3D001EBC43 /* MyCustomNewTableViewCell.swift */,
+				848099921DEEA2D7001EBC43 /* ActiveDetailsViewController.swift */,
+				848099941DEEA2F7001EBC43 /* NewDetailsViewController.swift */,
 			);
 			name = Bills;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				848099881DEE91FE001EBC43 /* NewBillsController.swift in Sources */,
 				84752E001DE98C1F00C388B8 /* Notification.swift in Sources */,
 				84752E081DECBB3500C388B8 /* StateDetailsViewController.swift in Sources */,
+				848099951DEEA2F7001EBC43 /* NewDetailsViewController.swift in Sources */,
 				842E6FD51DED24EA0075A3D3 /* SenateDetailsViewController.swift in Sources */,
 				84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */,
 				8480998A1DEE9605001EBC43 /* MyCustomTableViewCell.swift in Sources */,
@@ -569,6 +576,7 @@
 				848099781DEE361D001EBC43 /* MenuController.swift in Sources */,
 				842E6FD31DED24D90075A3D3 /* HouseDetailsViewController.swift in Sources */,
 				848099741DEE2426001EBC43 /* LegTabBarController.swift in Sources */,
+				848099931DEEA2D7001EBC43 /* ActiveDetailsViewController.swift in Sources */,
 				8480997D1DEE6982001EBC43 /* AboutController.swift in Sources */,
 				84752E021DEA498100C388B8 /* ThirdViewController.swift in Sources */,
 				84752E061DEBE44600C388B8 /* UIImageView+stuff.swift in Sources */,
