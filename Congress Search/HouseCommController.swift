@@ -25,7 +25,7 @@ class HouseCommController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     func reloadTableData(_ notification: Notification) {
         self.comms = self.mod.houseComms
-        print(self.comms)
+//        print(self.comms)
         self.commsTable.reloadData()
     }
 
@@ -51,11 +51,11 @@ class HouseCommController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "activeSeg",
-            let nextScene = segue.destination as? ActiveDetailsViewController ,
+        if segue.identifier == "commDetailSeg",
+            let nextScene = segue.destination as? CommDetailsViewController ,
             let indexPath = self.commsTable.indexPathForSelectedRow {
             let selectedBill = self.comms[indexPath.row]
-            nextScene.bill = selectedBill
+            nextScene.comm = selectedBill
         }
     }
     
