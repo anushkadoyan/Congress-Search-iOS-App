@@ -28,9 +28,9 @@ class HouseCommController: UIViewController, UITableViewDelegate, UITableViewDat
         print(self.comms)
         self.commsTable.reloadData()
     }
-    @IBAction func menuClicked(_ sender: Any) {
+
+    @IBAction func menuButtonClicked(_ sender: Any) {
         self.slideMenuController()?.openLeft()
-        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.comms.count

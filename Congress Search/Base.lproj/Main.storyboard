@@ -253,7 +253,7 @@
         <!--Senate-->
         <scene sceneID="Asb-5Q-fyK">
             <objects>
-                <viewController id="WiO-yC-OXP" sceneMemberID="viewController">
+                <viewController id="WiO-yC-OXP" customClass="SenateCommController" customModule="Congress_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Abl-ww-jHh"/>
                         <viewControllerLayoutGuide type="bottom" id="ue7-vM-5XB"/>
@@ -304,6 +304,9 @@
                                     <navigationItem title="Committee" id="J8a-vu-zGF">
                                         <barButtonItem key="leftBarButtonItem" image="Menu-64" style="plain" id="ptm-To-eQP">
                                             <inset key="imageInsets" minX="0.0" minY="20" maxX="30" maxY="20"/>
+                                            <connections>
+                                                <action selector="menuClicked:" destination="WiO-yC-OXP" id="3tD-ug-nyp"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -314,6 +317,9 @@
                     <tabBarItem key="tabBarItem" title="Senate" id="Wo8-Hz-kA8">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="commsTable" destination="8ne-9d-hPr" id="3eZ-Ff-5Kk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ean-Pp-08Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,7 +328,7 @@
         <!--Joint-->
         <scene sceneID="qx5-ul-L9B">
             <objects>
-                <viewController id="FOH-aP-Xih" sceneMemberID="viewController">
+                <viewController id="FOH-aP-Xih" customClass="JointCommController" customModule="Congress_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W4o-vk-Ui5"/>
                         <viewControllerLayoutGuide type="bottom" id="b3z-yG-U1Q"/>
@@ -336,12 +342,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="jointCommsCell" id="w9l-IB-IVJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="jointCommsCell" textLabel="bbn-u9-nzz" detailTextLabel="muM-hX-Mr7" style="IBUITableViewCellStyleSubtitle" id="w9l-IB-IVJ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w9l-IB-IVJ" id="HNm-zB-AcV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bbn-u9-nzz">
+                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="muM-hX-Mr7">
+                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -357,6 +379,9 @@
                                     <navigationItem title="Committee" id="sWz-dr-Duj">
                                         <barButtonItem key="leftBarButtonItem" image="Menu-64" style="plain" id="I4C-me-HTv">
                                             <inset key="imageInsets" minX="0.0" minY="20" maxX="30" maxY="20"/>
+                                            <connections>
+                                                <action selector="menuClicked:" destination="FOH-aP-Xih" id="6L4-9e-xSl"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -367,6 +392,9 @@
                     <tabBarItem key="tabBarItem" title="Joint" id="3kx-LM-yPO">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="commsTable" destination="AMw-d8-5I4" id="Kcv-Tz-iPk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZ6-b3-uln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -426,6 +454,9 @@
                                     <navigationItem title="Committee" id="URG-TM-lp7">
                                         <barButtonItem key="leftBarButtonItem" image="Menu-64" style="plain" id="ycB-u9-SwU">
                                             <inset key="imageInsets" minX="0.0" minY="20" maxX="30" maxY="20"/>
+                                            <connections>
+                                                <action selector="menuButtonClicked:" destination="cce-ZD-Fxr" id="bkZ-Z6-Dhb"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
