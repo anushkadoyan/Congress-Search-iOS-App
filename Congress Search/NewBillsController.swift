@@ -27,6 +27,10 @@ class NewBillsController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bills.count
     }
+    @IBAction func menuClicked(_ sender: Any) {
+        self.slideMenuController()?.openLeft()
+
+    }
     func convertDateFormater(date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"

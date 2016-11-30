@@ -17,6 +17,10 @@ class model {
     var legSenate = [JSON]()
     var activeBills = [JSON]()
     var newBills = [JSON]()
+    var houseComms = [JSON]()
+    var senateComms = [JSON]()
+    var jointComms = [JSON]()
+
 
 //    var leg = [JSON]()
 
@@ -115,6 +119,58 @@ class model {
             }
         }
     }
+    func getHouseComms(){
+        let url = "https://2-dot-congress-148223.appspot.com/main.php?action=houseComms"
+        Alamofire.request(url).responseJSON { (Response) -> Void in
+            switch Response.result {
+            // checking if result has value
+            case .success(let value):
+                //                let json = JSON(value)
+                let jsonSenate = JSON(value)["results"]
+                self.houseComms = jsonSenate.array!
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .reloadHouseComms, object: nil)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    func getSenateComms(){
+        let url = "https://2-dot-congress-148223.appspot.com/main.php?action=senateComms"
+        Alamofire.request(url).responseJSON { (Response) -> Void in
+            switch Response.result {
+            // checking if result has value
+            case .success(let value):
+                //                let json = JSON(value)
+                let jsonSenate = JSON(value)["results"]
+                self.senateComms = jsonSenate.array!
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .reloadSenateComms, object: nil)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    func getJointComms(){
+        let url = "https://2-dot-congress-148223.appspot.com/main.php?action=jointComms"
+        Alamofire.request(url).responseJSON { (Response) -> Void in
+            switch Response.result {
+            // checking if result has value
+            case .success(let value):
+                //                let json = JSON(value)
+                let jsonSenate = JSON(value)["results"]
+                self.jointComms = jsonSenate.array!
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .reloadJointComms, object: nil)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
 
 
 }

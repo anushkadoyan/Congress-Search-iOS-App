@@ -22,13 +22,16 @@
 		8480997B1DEE59E5001EBC43 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099771DEE361D001EBC43 /* MenuController.swift */; };
 		8480997D1DEE6982001EBC43 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480997C1DEE6982001EBC43 /* AboutController.swift */; };
 		8480997F1DEE72C7001EBC43 /* BillTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480997E1DEE72C7001EBC43 /* BillTabBarController.swift */; };
-		848099811DEE7516001EBC43 /* CommTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099801DEE7516001EBC43 /* CommTabBarController.swift */; };
 		848099861DEE91F1001EBC43 /* ActiveBillsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099851DEE91F1001EBC43 /* ActiveBillsController.swift */; };
 		848099881DEE91FE001EBC43 /* NewBillsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099871DEE91FE001EBC43 /* NewBillsController.swift */; };
 		8480998A1DEE9605001EBC43 /* MyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099891DEE9605001EBC43 /* MyCustomTableViewCell.swift */; };
 		8480998E1DEE9F3D001EBC43 /* MyCustomNewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480998D1DEE9F3D001EBC43 /* MyCustomNewTableViewCell.swift */; };
 		848099931DEEA2D7001EBC43 /* ActiveDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099921DEEA2D7001EBC43 /* ActiveDetailsViewController.swift */; };
 		848099951DEEA2F7001EBC43 /* NewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099941DEEA2F7001EBC43 /* NewDetailsViewController.swift */; };
+		848099971DEEBCDA001EBC43 /* HouseCommController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099961DEEBCDA001EBC43 /* HouseCommController.swift */; };
+		848099991DEEBCE6001EBC43 /* SenateCommController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848099981DEEBCE6001EBC43 /* SenateCommController.swift */; };
+		8480999B1DEEBCF1001EBC43 /* JointCommController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480999A1DEEBCF1001EBC43 /* JointCommController.swift */; };
+		8480999F1DEEC2C0001EBC43 /* CommTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480999E1DEEC2C0001EBC43 /* CommTabBarController.swift */; };
 		84C2211A1DE8E9DC000090C6 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C221191DE8E9DC000090C6 /* model.swift */; };
 		84F369C11DE696D000D6C0E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C01DE696D000D6C0E3 /* AppDelegate.swift */; };
 		84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F369C21DE696D000D6C0E3 /* FirstViewController.swift */; };
@@ -77,13 +80,16 @@
 		848099771DEE361D001EBC43 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		8480997C1DEE6982001EBC43 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
 		8480997E1DEE72C7001EBC43 /* BillTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillTabBarController.swift; sourceTree = "<group>"; };
-		848099801DEE7516001EBC43 /* CommTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommTabBarController.swift; sourceTree = "<group>"; };
 		848099851DEE91F1001EBC43 /* ActiveBillsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveBillsController.swift; sourceTree = "<group>"; };
 		848099871DEE91FE001EBC43 /* NewBillsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBillsController.swift; sourceTree = "<group>"; };
 		848099891DEE9605001EBC43 /* MyCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTableViewCell.swift; sourceTree = "<group>"; };
 		8480998D1DEE9F3D001EBC43 /* MyCustomNewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomNewTableViewCell.swift; sourceTree = "<group>"; };
 		848099921DEEA2D7001EBC43 /* ActiveDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDetailsViewController.swift; sourceTree = "<group>"; };
 		848099941DEEA2F7001EBC43 /* NewDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDetailsViewController.swift; sourceTree = "<group>"; };
+		848099961DEEBCDA001EBC43 /* HouseCommController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCommController.swift; sourceTree = "<group>"; };
+		848099981DEEBCE6001EBC43 /* SenateCommController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenateCommController.swift; sourceTree = "<group>"; };
+		8480999A1DEEBCF1001EBC43 /* JointCommController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JointCommController.swift; sourceTree = "<group>"; };
+		8480999E1DEEC2C0001EBC43 /* CommTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommTabBarController.swift; sourceTree = "<group>"; };
 		84C221191DE8E9DC000090C6 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		84F369BD1DE696D000D6C0E3 /* Congress Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Congress Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F369C01DE696D000D6C0E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -252,9 +258,12 @@
 				8480998F1DEEA0B6001EBC43 /* Bills */,
 				848099901DEEA0E6001EBC43 /* Menu */,
 				848099831DEE91BB001EBC43 /* Storyboards */,
-				848099801DEE7516001EBC43 /* CommTabBarController.swift */,
 				848099841DEE91CE001EBC43 /* Extensions */,
 				84F369C91DE696D000D6C0E3 /* Assets.xcassets */,
+				848099961DEEBCDA001EBC43 /* HouseCommController.swift */,
+				848099981DEEBCE6001EBC43 /* SenateCommController.swift */,
+				8480999A1DEEBCF1001EBC43 /* JointCommController.swift */,
+				8480999E1DEEC2C0001EBC43 /* CommTabBarController.swift */,
 			);
 			path = "Congress Search";
 			sourceTree = "<group>";
@@ -563,7 +572,7 @@
 				848099761DEE279E001EBC43 /* LeftMenu.swift in Sources */,
 				84F369C51DE696D000D6C0E3 /* SecondViewController.swift in Sources */,
 				848099721DED79AD001EBC43 /* String+stuff.swift in Sources */,
-				848099811DEE7516001EBC43 /* CommTabBarController.swift in Sources */,
+				848099991DEEBCE6001EBC43 /* SenateCommController.swift in Sources */,
 				848099881DEE91FE001EBC43 /* NewBillsController.swift in Sources */,
 				84752E001DE98C1F00C388B8 /* Notification.swift in Sources */,
 				84752E081DECBB3500C388B8 /* StateDetailsViewController.swift in Sources */,
@@ -574,7 +583,10 @@
 				84F369C31DE696D000D6C0E3 /* FirstViewController.swift in Sources */,
 				8480997F1DEE72C7001EBC43 /* BillTabBarController.swift in Sources */,
 				848099781DEE361D001EBC43 /* MenuController.swift in Sources */,
+				848099971DEEBCDA001EBC43 /* HouseCommController.swift in Sources */,
+				8480999B1DEEBCF1001EBC43 /* JointCommController.swift in Sources */,
 				842E6FD31DED24D90075A3D3 /* HouseDetailsViewController.swift in Sources */,
+				8480999F1DEEC2C0001EBC43 /* CommTabBarController.swift in Sources */,
 				848099741DEE2426001EBC43 /* LegTabBarController.swift in Sources */,
 				848099931DEEA2D7001EBC43 /* ActiveDetailsViewController.swift in Sources */,
 				8480997D1DEE6982001EBC43 /* AboutController.swift in Sources */,
