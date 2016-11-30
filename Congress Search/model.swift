@@ -15,6 +15,9 @@ class model {
     var leg = [JSON]()
     var legHouse = [JSON]()
     var legSenate = [JSON]()
+    var activeBills = [JSON]()
+    var newBills = [JSON]()
+
 //    var leg = [JSON]()
 
     //$content = array($legislators,$committees,$billsOld,$billsNew,$legislatorsHouse,$legislatorsSenate);
@@ -39,8 +42,6 @@ class model {
                 }
             case .failure(let error):
                 print(error)
-                
-                
             }
         }
     }
@@ -52,17 +53,7 @@ class model {
                 case .success(let value):
                     //                let json = JSON(value)
                     let jsonHouse = JSON(value)["results"]
-//                    
-//                    for var entry in jsonHouse.array! {
-//                        var filePath = entry["bioguide_id"].stringValue+".jpg"
-//                        if let url  = NSURL(string: filePath),
-//                            let thing = NSData(contentsOf: url as URL){
-//                            entry["image"] = thing
-//                        }
-//                    }
-//
-                   
-                    
+ 
                     self.legHouse = jsonHouse.array!
 
                     DispatchQueue.main.async {
@@ -70,40 +61,60 @@ class model {
                     }
                 case .failure(let error):
                     print(error)
-                    
-                    
                 }
             }
         }
-
-            func getLegsSenate(){
-                let url = "https://2-dot-congress-148223.appspot.com/main.php?action=legSenate"
-                Alamofire.request(url).responseJSON { (Response) -> Void in
-                    switch Response.result {
+        func getLegsSenate(){
+            let url = "https://2-dot-congress-148223.appspot.com/main.php?action=legSenate"
+            Alamofire.request(url).responseJSON { (Response) -> Void in
+                switch Response.result {
                     // checking if result has value
-                    case .success(let value):
-                        //                let json = JSON(value)
-                        let jsonSenate = JSON(value)["results"]
-                        self.legSenate = jsonSenate.array!
-                        
-                        
-                        //                for anItem in json.array! {
-                        //
-                        //                    let title: String? = anItem["last_name"].stringValue + ", " + anItem["first_name"].stringValue
-                        //                    let body: String? = anItem["last_name"].stringValue
-                        //                    model.fvc.tableTitle.append(title!)
-                        //                    model.fvc.tableBody.append(body!)
-                        //
-                        //                }
-                        DispatchQueue.main.async {
-                            NotificationCenter.default.post(name: .reload, object: nil)
-                        }
-                    case .failure(let error):
-                        print(error)
-                        
-                        
+                case .success(let value):
+                //                let json = JSON(value)
+                    let jsonSenate = JSON(value)["results"]
+                    self.legSenate = jsonSenate.array!
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: .reload, object: nil)
                     }
+                case .failure(let error):
+                    print(error)
                 }
+            }
+        }
+    func getActiveBills(){
+        let url = "https://2-dot-congress-148223.appspot.com/main.php?action=billsOld"
+        Alamofire.request(url).responseJSON { (Response) -> Void in
+            switch Response.result {
+            // checking if result has value
+            case .success(let value):
+                //                let json = JSON(value)
+                let jsonSenate = JSON(value)["results"]
+                self.activeBills = jsonSenate.array!
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .reloadActiveBills, object: nil)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    func getNewBills(){
+        let url = "https://2-dot-congress-148223.appspot.com/main.php?action=billsNew"
+        Alamofire.request(url).responseJSON { (Response) -> Void in
+            switch Response.result {
+            // checking if result has value
+            case .success(let value):
+                //                let json = JSON(value)
+                let jsonSenate = JSON(value)["results"]
+                self.newBills = jsonSenate.array!
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .reloadNewBills, object: nil)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
-                }
+
 }
