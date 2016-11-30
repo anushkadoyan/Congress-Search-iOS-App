@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SwiftSpinner
 class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var legs = [JSON]()
@@ -20,6 +21,9 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (self.legs.count==0) {
+            SwiftSpinner.show("Loading...")
+        }
         legTable.delegate = self
         legTable.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData(_:)), name: .reload, object: nil)
@@ -51,6 +55,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "legSenateCell", for: indexPath)
         if(legs.indices.contains(indexPath.row)) {
+            SwiftSpinner.hide()
             cell.textLabel?.text = legs[indexPath.row]["last_name"].stringValue + ", " + legs[indexPath.row]["first_name"].stringValue
             let state = self.states[legs[indexPath.row]["state"].stringValue]
             cell.detailTextLabel?.text = state

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import SwiftSpinner
 
 class ActiveBillsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var billsTable: UITableView!
@@ -16,12 +17,15 @@ class ActiveBillsController: UIViewController, UITableViewDelegate, UITableViewD
     let mod = model()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if (self.mod.activeBills.count==0) {
+            SwiftSpinner.show("Loading...")
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData(_:)), name: .reloadActiveBills, object: nil)
         self.mod.getActiveBills()
     }
     func reloadTableData(_ notification: Notification) {
         bills = self.mod.activeBills
+       
         billsTable.reloadData()
     }
     @IBAction func menuClicked(_ sender: Any) {
@@ -52,6 +56,8 @@ class ActiveBillsController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "activeBillsCustomCell", for: indexPath) as! MyCustomTableViewCell
 
         if(bills.indices.contains(indexPath.row)) {
+            SwiftSpinner.hide()
+
         //bill_id
         cell.firstLabel.text = bills[indexPath.row]["bill_id"].stringValue
         //official_title

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SwiftSpinner
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var MenuButton: UIBarButtonItem!
@@ -27,6 +28,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (self.legs.count==0) {
+            SwiftSpinner.show("Loading...")
+        }
         legTable.delegate = self
         legTable.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData(_:)), name: .reload, object: nil)
@@ -101,6 +105,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                let cell = tableView.dequeueReusableCell(withIdentifier: "legCell", for: indexPath)
                if(legs.indices.contains(indexPath.row)) {
+                SwiftSpinner.hide()
             cell.textLabel?.text = (contacts[letters[indexPath.section]]?[indexPath.row]["last_name"].stringValue)!+", "+(contacts[letters[indexPath.section]]?[indexPath.row]["first_name"].stringValue)!
             let state = self.states[(contacts[letters[indexPath.section]]?[indexPath.row]["state"].stringValue)!]
             cell.detailTextLabel?.text = state

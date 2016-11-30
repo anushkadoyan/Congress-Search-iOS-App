@@ -9,14 +9,16 @@
 import Foundation
 import UIKit
 import SwiftyJSON
-
+import SwiftSpinner
 class NewBillsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var bills = [JSON]()
     let mod = model()
     @IBOutlet var billsTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if (self.mod.newBills.count==0) {
+            SwiftSpinner.show("Loading...")
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData(_:)), name: .reloadNewBills, object: nil)
         self.mod.getNewBills()
     }
@@ -52,6 +54,7 @@ class NewBillsController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "newBillsCustomCell", for: indexPath) as! MyCustomNewTableViewCell
         
         if(bills.indices.contains(indexPath.row)) {
+            SwiftSpinner.hide()
             //bill_id
             cell.firstLabel.text = bills[indexPath.row]["bill_id"].stringValue
             //official_title

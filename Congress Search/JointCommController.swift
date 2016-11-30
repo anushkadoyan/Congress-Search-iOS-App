@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
-
+import SwiftSpinner
 class JointCommController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var comms = [JSON]()
     let mod = model()
@@ -19,7 +19,9 @@ class JointCommController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if (self.comms.count==0) {
+            SwiftSpinner.show("Loading...")
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData(_:)), name: .reloadJointComms, object: nil)
         self.mod.getJointComms()
     }
@@ -43,7 +45,7 @@ class JointCommController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "jointCommsCell", for: indexPath)
         
         if(self.comms.indices.contains(indexPath.row)) {
-            
+            SwiftSpinner.hide()
             cell.textLabel?.text = self.comms[indexPath.row]["name"].stringValue
             cell.detailTextLabel?.text = self.comms[indexPath.row]["committee_id"].stringValue
             //    cell.detailTextLabel?.text = state

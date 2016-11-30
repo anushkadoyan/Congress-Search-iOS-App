@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import SwiftSpinner
 
 class HouseCommController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var comms = [JSON]()
@@ -19,7 +20,9 @@ class HouseCommController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if (self.comms.count==0) {
+            SwiftSpinner.show("Loading...")
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData(_:)), name: .reloadHouseComms, object: nil)
         self.mod.getHouseComms()
     }
@@ -40,6 +43,7 @@ class HouseCommController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "houseCommsCell", for: indexPath)
         
         if(self.comms.indices.contains(indexPath.row)) {
+            SwiftSpinner.hide()
             
             cell.textLabel?.text = self.comms[indexPath.row]["name"].stringValue
             cell.detailTextLabel?.text = self.comms[indexPath.row]["committee_id"].stringValue
