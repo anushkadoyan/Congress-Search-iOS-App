@@ -68,27 +68,29 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
 
     }
     override func viewWillAppear(_ animated: Bool) {
-
+        print("appeared")
         super.viewWillAppear(animated)
+        print(self.leg)
         let filePath = "https://theunitedstates.io/images/congress/original/"+self.leg["bioguide_id"].stringValue+".jpg"
         self.detailImage.downloadImageFrom(link: filePath, contentMode: UIViewContentMode.scaleAspectFit)
 
         let state = self.states[(self.leg["state"].stringValue)]
         let termEnd =  (convertDateFormater(date: self.leg["term_end"].stringValue))
         let birthday =  (convertDateFormater(date: self.leg["birthday"].stringValue))
+        var gender = ""
         if (self.leg["gender"].stringValue=="M") {
-            self.leg["gender"].stringValue = "Male"
+            gender = "Male"
         } else {
-            self.leg["gender"].stringValue = "Female"
+            gender = "Female"
         }
         //UIApplication.shared.openURL(URL(string: "http://www.stackoverflow.com")!)
- 
-        self.leg["chamber"].stringValue.capitalizeFirstLetter()
+        var chamber = self.leg["chamber"].stringValue
+        chamber.capitalizeFirstLetter()
         self.legDetailsArray = ["First Name","Last Name","State","Birth Date","Gender","Chamber","Fax No.","Twitter","Facebook","Website","Office No.","Term ends on"]
         self.legDetailsDetailsArray=[self.leg["first_name"].stringValue ,self.leg["last_name"].stringValue ,state! ]
         self.legDetailsDetailsArray.append(birthday )
-        self.legDetailsDetailsArray.append(self.leg["gender"].stringValue )
-        self.legDetailsDetailsArray.append(self.leg["chamber"].stringValue )
+        self.legDetailsDetailsArray.append(gender )
+        self.legDetailsDetailsArray.append(chamber )
         self.legDetailsDetailsArray.append(self.leg["fax"].stringValue )
         self.legDetailsDetailsArray.append(self.leg["twitter_id"].stringValue )
         self.legDetailsDetailsArray.append(self.leg["facebook_id"].stringValue )
@@ -105,6 +107,8 @@ class StateDetailsViewController: UIViewController, UITableViewDelegate, UITable
             self.fav.image = UIImage(named: "Star Filled-50.png")
         }
         else {
+            print("no cont")
+
             self.fav.image = UIImage(named: "Star-50.png")
         }
 

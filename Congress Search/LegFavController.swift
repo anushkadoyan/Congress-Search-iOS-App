@@ -50,6 +50,16 @@ class LegFavController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
 
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "legFavSeg",
+            let nextScene = segue.destination as? StateDetailsViewController ,
+            let indexPath = self.legTable.indexPathForSelectedRow {
+            let selectedLeg = favorites["legs"]?[indexPath.row]
+            nextScene.leg = selectedLeg!
+            
+        }
+    }
+
 
 
 
