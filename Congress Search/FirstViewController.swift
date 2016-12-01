@@ -10,20 +10,25 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SwiftSpinner
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPickerViewDataSource,UIPickerViewDelegate  {
     
+
+    
+    @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var MenuButton: UIBarButtonItem!
     @IBOutlet weak var legTable: UITableView!
     var legs = [JSON]()
+    var filteredLegs = [JSON]()
     let mod = model()
-
+    var searchState = String()
     var letters: [Character] = []
     var lettersInString: [String] = []
     var data: [String] = []
     var nameData: [String] = []
-
-    var contacts = [Character: [JSON]]()
+    var filtered = 0
     
+    var contacts = [Character: [JSON]]()
+    var fullStates = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District Of Columbia", "Federated States Of Micronesia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Marshall Islands", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
      var states = [     "AL": "Alabama",     "AK": "Alaska",     "AS": "American Samoa",     "AZ": "Arizona",     "AR": "Arkansas",     "CA": "California",     "CO": "Colorado",     "CT": "Connecticut",     "DE": "Delaware",     "DC": "District Of Columbia",    "FL": "Florida",     "GA": "Georgia",     "GU": "Guam",     "HI": "Hawaii",     "ID": "Idaho",     "IL": "Illinois",     "IN": "Indiana",     "IA": "Iowa",     "KS": "Kansas",     "KY": "Kentucky",     "LA": "Louisiana",     "ME": "Maine",     "MH": "Marshall Islands",     "MD": "Maryland",     "MA": "Massachusetts",     "MI": "Michigan",     "MN": "Minnesota",     "MS": "Mississippi",     "MO": "Missouri",     "MT": "Montana",     "NE": "Nebraska",     "NV": "Nevada",     "NH": "New Hampshire",     "NJ": "New Jersey",     "NM": "New Mexico",     "NY": "New York",     "NC": "North Carolina",     "ND": "North Dakota",     "MP": "Northern Mariana Islands",     "OH": "Ohio",     "OK": "Oklahoma",     "OR": "Oregon",     "PW": "Palau",     "PA": "Pennsylvania",     "PR": "Puerto Rico",     "RI": "Rhode Island",     "SC": "South Carolina",     "SD": "South Dakota",     "TN": "Tennessee",     "TX": "Texas",     "UT": "Utah",     "VT": "Vermont",     "VI": "Virgin Islands",     "VA": "Virginia",     "WA": "Washington",     "WV": "West Virginia",     "WI": "Wisconsin",     "WY": "Wyoming" ];
     
     override func viewDidLoad() {
@@ -38,20 +43,71 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         self.mod.getLegs()
     }
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+  
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return fullStates.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent: Int) -> String? {
+        return fullStates[row]
+    }
     
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent: Int) {
+//        print(fullStates[row]);
+        searchState = fullStates[row];
+        //NSPredicate(format: "SELF.name CONTAINS[c] %@",searchString)
+//        
+//        for( *subArray in arraytoEvaluate)                                                 // loop over each sub array
+//            [filtered addObjectsFromArray:[subArray filteredArrayUsingPredicate: searchPredicate]]; // and perform the predicate
+//
+        
+        self.legs = self.legs.filter { $0["state"] == "CA"} // This will eliminate items with id == "1".
+        self.filtered = 1;
+        
+//        print(self.legs);
+        // it is equivalent to the below line
+//        self.legs  = items.filter({ (item:Item)->Bool in item.id != "1"})
+        
+        
+        
+//        let searchPredicate = NSPredicate(format: "SELF LIKE[c] %@", searchState)
+//        let array = (self.legs as NSArray).filtered(using: searchPredicate)
+//        self.filteredLegs = array as! [JSON]
+        NotificationCenter.default.post(name: .reload, object: nil)
+//        myLabel.text = fullStates[row]
+    }
     
     @IBAction func MenuButtonClicked(_ sender: Any) {
         self.slideMenuController()?.openLeft()
 
     }
+    @IBAction func filterClicked(_ sender: Any) {
+        if(self.pickerView.isHidden == true) {
+//            print("hidden");
+            self.pickerView.isHidden = false;
+            self.legTable.isHidden = true;
+        }
+        else {
+            self.pickerView.isHidden = true;
+            self.legTable.isHidden = false;
+
+        }
+    }
     func reloadData(_ notification: Notification) {
         legTable.reloadData()
     }
     func reloadTableData(_ notification: Notification) {
-        legs = self.mod.leg
-        if(legs.count>0) {
-            for item in legs {
+        contacts.removeAll()
+        data.removeAll()
+        print(self.filtered);
+
+        if(self.filtered == 0) {
+            legs = self.mod.leg
+        }
+        if(self.legs.count>0) {
+            for item in self.legs {
                 data.append(item["state"].stringValue)
             }
            
@@ -67,11 +123,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             })
             lettersInString = Array(letters).map { String($0) }
 
-            for item in legs {
+            for item in self.legs {
                 nameData.append(item["last_name"].stringValue+", "+item["first_name"].stringValue)
             }
-            for entry in legs {
-                
+            for entry in self.legs {
+                print(entry)
                 if contacts[entry["state"].stringValue[entry["state"].stringValue.startIndex]] == nil {
                     contacts[entry["state"].stringValue[entry["state"].stringValue.startIndex]] = [JSON]()
                 }
@@ -79,10 +135,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 contacts[entry["state"].stringValue[entry["state"].stringValue.startIndex]]!.append(entry)
                 //(entry["last_name"].stringValue+", "+entry["first_name"].stringValue)
-                
             }
 
         }
+//        print(self.contacts)
         legTable.reloadData()
     }
     
@@ -90,7 +146,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return lettersInString
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.contacts[letters[section]]!.count
+        if(contacts.count>0) {
+            return self.contacts[letters[section]]!.count
+        }
+        return 538
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

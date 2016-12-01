@@ -12,6 +12,7 @@ import SwiftyJSON
 import SwiftSpinner
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var searchButton: UIBarButtonItem!
     var legs = [JSON]()
     let mod = model()
     @IBOutlet var menuButton: UIBarButtonItem!
@@ -33,6 +34,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.slideMenuController()?.openLeft()
 
     }
+    
+    
+    
     func reloadTableData(_ notification: Notification) {
         
 //        let APIdata = notification.object as! JSON
